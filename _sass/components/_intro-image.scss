@@ -4,7 +4,7 @@
   margin-top: -40px;
 }
 .intro-image-absolute {
-  max-width: none;
+  max-width: 140%;
 
   padding: 0;
   margin-bottom: 30px;
@@ -12,12 +12,12 @@
   }
   @include media-breakpoint-up(md) {
     position: absolute;
-    bottom: -50px;
+    bottom: 200px;
     left: -50px;
     width: 700px;
   }
   @include media-breakpoint-up(lg) {
-    bottom: -60px;
+    bottom: -10px;
     left: -60px;
     width: 800px;
   }
