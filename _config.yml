@@ -1,5 +1,6 @@
 baseurl: ''
 exclude: ['README.md', 'timesheet.txt', 'todo.txt', 'CHANGELOG.md']
+include: ['_redirects']
 permalink: pretty
 title: 'The Open Model Project'
 
