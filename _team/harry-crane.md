@@ -2,7 +2,7 @@
 title: "Harry Crane"
 date: 2020-12-21
 draft: false
-image: "http://www.harrycrane.com/pic.png"
+image: "images/team/harry-crane.png"
 jobtitle: "Statistician"
 weight: 5
 layout: team

@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2020-12-21
+### Changed
+Harry Crane's image is now served from our website, so it's served over https
+
 ## [1.0.0] - 2020-12-21
 ### Added
 Static odds readout
