@@ -3,6 +3,7 @@ title: Open Model Project
 layout: default
 bodyClass: page-home
 ---
+<script src="assets/js/model-switcher.js"></script>
 
 <div class="intro">
     <div class="container">
@@ -27,48 +28,80 @@ bodyClass: page-home
 
 <div class="strip" id="prediction-statics">
     <div class="container pt-3 pb-3 pb-md-5">
-        {% assign pred = site.predictions | sort: 'weight' %}
-        {% for prediction in pred %}
-            {% if prediction.featured %}
+        <div class="row align-items-center">
+            <div class="col">
+                <form>
+                    <h3><i>Tweak the model assumptions...</i></h3>
+                    <div class="form-check">
+                        <input class="form-check-input model-switcher" type="checkbox" value="" id="covid" checked>
+                        <label class="form-check-label" for="covid">
+                            Include COVID-19 Adjustment
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input model-switcher" type="checkbox" value='' id="trafalgar" checked>
+                        <label class="form-check-label" for="trafalgar">
+                            Include Trafalgar Group polling?
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="average">Use...</label>
+                        <select class="form-control model-switcher" id="average">
+                            <option>Weighted Average</option>
+                            <option>Simple Average</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col">
+                {% assign pred = site.predictions | sort: 'weight' %}
+                {% for prediction in pred %}
+                {% if prediction.featured %}
                 <div class="row justify-content-center">
-                <div class="col prediction prediction-summary">
-                    <div class="prediction-content">
-                        <h1 class="prediction-number">
-                            {{ prediction.data }}
-                        </h1>
-                        <h2 class="prediction-title">
-                            {{ prediction.content | markdownify | strip_html | truncate: 100 }}
-                        </h2>
+                    <div class="col prediction prediction-summary">
+                        <div class="prediction-content">
+                            <h1 class="prediction-number" id="{{prediction.title}}">
+                                {{ prediction.data }}
+                            </h1>
+                            <h2 class="prediction-title">
+                                {{ prediction.content | markdownify | strip_html | truncate: 100 }}
+                            </h2>
+                        </div>
                     </div>
                 </div>
-            </div>
-            {% endif %}
-        {% endfor %}
+                {% endif %}
+                {% endfor %}
 
 
-        <div class="row justify-content-start">
-            {% for prediction in pred %}
-                {% if prediction.featured == nil %}
+                <div class="row justify-content-start">
+                    {% for prediction in pred %}
+                    {% if prediction.featured == nil %}
                     <div class="col">
                         <div class="prediction prediction-summary">
                             <div class="prediction-content">
-                                <h2 class="prediction-number">
+                                <h2 class="prediction-number" id="{{prediction.title}}">
                                     {{ prediction.data }}
                                 </h2>
-                                <p class="prediction-title">{{ prediction.content | markdownify | strip_html | truncate: 100 }}</p>
+                                <p class="prediction-title">{{ prediction.content | markdownify | strip_html | truncate: 100
+                                    }}</p>
                             </div>
                         </div>
                     </div>
-                {% endif %}
-            {% endfor %}
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
         </div>
 
 
+        <!--button-->
         <div class="row justify-content-center">
             <div class="col-auto">
                 <a class="button button-primary"
-                   href="https://docs.google.com/spreadsheets/d/1BM-HSoegMc6gxu56LCNnpIlm_b6jlDEtztiQ4EF5jy4/copy">View
-                    All Predictions</a>
+                   href="https://docs.google.com/spreadsheets/d/1BM-HSoegMc6gxu56LCNnpIlm_b6jlDEtztiQ4EF5jy4/copy">
+                    View All Predictions, Change All Variables</a>
             </div>
         </div>
     </div>

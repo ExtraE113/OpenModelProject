@@ -1,7 +1,7 @@
 a {
   color: $primary;
 }
-p {
+p, label, option, select {
   line-height: 26px;
   color: $steel;
   font-family: $font-family-base;

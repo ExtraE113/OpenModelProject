@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2020-12-22
+### Added
+Tweak the model assumptions now works
+### Changed
+Hosting now on netlify
+
 ## [1.0.2] - 2020-12-21
 ### Changed
 Intro image looks a lot better on varying screen sizes.

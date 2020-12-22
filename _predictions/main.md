@@ -1,6 +1,7 @@
 ---
 featured: true
-data: "19%"
+data: "26%"
 weight: 1
+title: dsenate
 ---
 Democratic Senate Odds

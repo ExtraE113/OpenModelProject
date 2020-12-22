@@ -13,7 +13,6 @@ p.prediction-title {
 h1.prediction-number {
   font-size: 42px * 2;
   font-weight: bold;
-  line-height: 1.2;
   @include media-breakpoint-up(md) {
     font-size: 48px * 2;
   }
