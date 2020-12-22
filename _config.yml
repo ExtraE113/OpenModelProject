@@ -1,5 +1,5 @@
 baseurl: ''
-exclude: ['README.md', 'timesheet.txt', 'todo.txt']
+exclude: ['README.md', 'timesheet.txt', 'todo.txt', 'CHANGELOG.md']
 permalink: pretty
 title: 'The Open Model Project'
 
@@ -16,8 +16,8 @@ footer:
 seo:
   meta_og_title: "The Open Model Project"
   meta_og_type: "website"
-#  meta_og_url: "https://ezranewman.com/openmodelproject" # todo
-  meta_og_image: "https://raw.githubusercontent.com/ExtraE113/OpenModelProject/master/images/Screenshot_2020-12-21%20The%20Open%20Model%20Project.png" # todo
+  meta_og_url: "https://www.openmodelproject.com"
+  meta_og_image: "https://raw.githubusercontent.com/ExtraE113/OpenModelProject/master/images/Screenshot_2020-12-21%20The%20Open%20Model%20Project.png"
   meta_og_description: "We believe that better election forecasting and transparency are important. Play with the inputs to our model to understand how it works and see how the predictions change."
   meta_twitter_card: "summary"
 #  meta_twitter_site: "@zerostaticio" # todo
@@ -27,6 +27,8 @@ collections:
   services:
     output: true
   team:
+    output: true
+  predictions:
     output: true
 
 sass:

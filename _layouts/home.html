@@ -24,23 +24,74 @@ bodyClass: page-home
     </div>
 </div>
 
+
 <div class="strip">
     <div class="container pt-6 pb-6 pb-md-10">
+        {% assign pred = site.predictions | sort: 'weight' %}
+        {% for prediction in pred %}
+            {% if prediction.featured %}
+                <div class="row justify-content-center">
+                <div class="col prediction prediction-summary">
+                    <div class="prediction-content">
+                        <h1 class="prediction-number">
+                            {{ prediction.data }}
+                        </h1>
+                        <h2 class="prediction-title">
+                            {{ prediction.content | markdownify | strip_html | truncate: 100 }}
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+
+
         <div class="row justify-content-start">
-            {% assign serv = site.services | sort: 'weight'  %}
-            {% for service in serv %}
-                {% if service.featured %}
-                    <div class="col-12 col-md-4 mb-1">
-                        <div class="service service-summary">
-                            <div class="service-content">
-                                <h2 class="service-title">
-                                    <a href="{{site.baseurl}}{{ service.url }}">{{ service.title }}</a>
+            {% for prediction in pred %}
+                {% if prediction.featured == nil %}
+                    <div class="col">
+                        <div class="prediction prediction-summary">
+                            <div class="prediction-content">
+                                <h2 class="prediction-number">
+                                    {{ prediction.data }}
                                 </h2>
-                                <p>{{ service.content | markdownify | strip_html | truncate: 100 }}</p>
+                                <p class="prediction-title">{{ prediction.content | markdownify | strip_html | truncate: 100 }}</p>
                             </div>
                         </div>
                     </div>
                 {% endif %}
+            {% endfor %}
+        </div>
+
+
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <a class="button button-primary"
+                   href="https://docs.google.com/spreadsheets/d/1BM-HSoegMc6gxu56LCNnpIlm_b6jlDEtztiQ4EF5jy4/copy">View
+                    All Predictions</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="strip">
+    <div class="container pt-6 pb-6 pb-md-10">
+        <div class="row justify-content-start">
+            {% assign serv = site.services | sort: 'weight' %}
+            {% for service in serv %}
+            {% if service.featured %}
+            <div class="col-12 col-md-4 mb-1">
+                <div class="service service-summary">
+                    <div class="service-content">
+                        <h2 class="service-title">
+                            <a href="{{site.baseurl}}{{ service.url }}">{{ service.title }}</a>
+                        </h2>
+                        <p>{{ service.content | markdownify | strip_html | truncate: 100 }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
             {% endfor %}
         </div>
         <div class="row justify-content-center">
