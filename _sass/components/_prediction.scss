@@ -1,0 +1,35 @@
+.prediction {
+  text-align: center;
+}
+
+.prediction-title {
+  line-height: 1.5;
+}
+
+p.prediction-title {
+  font-size: 20px;
+}
+
+h1.prediction-number {
+  font-size: 42px * 2;
+  font-weight: bold;
+  line-height: 1.2;
+  @include media-breakpoint-up(md) {
+    font-size: 48px * 2;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: 50px * 2;
+  }
+}
+
+h2.prediction-number {
+  font-size: 42px;
+  font-weight: bold;
+  line-height: 1.2;
+  @include media-breakpoint-up(md) {
+    font-size: 48px;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: 50px;
+  }
+}
