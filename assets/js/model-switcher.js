@@ -60,6 +60,7 @@ function handleChange() {
 }
 
 function ready() {
+    handleChange();
     let elements = document.getElementsByClassName("model-switcher")
     for (const element of elements) {
         element.addEventListener("change", handleChange)
