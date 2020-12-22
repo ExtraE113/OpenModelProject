@@ -3,7 +3,7 @@ exclude: ['README.md', 'timesheet.txt', 'todo.txt']
 permalink: pretty
 title: 'The Open Model Project'
 
-google_analytics_id: ""
+google_analytics_id: "256889263" # todo test
 homepage:
   show_call_box: true
 logo:
@@ -11,17 +11,17 @@ logo:
   desktop: "images/logo/logo.svg"
   desktop_height: "36px"
 footer:
-  copyright_text: 'Free Jekyll theme by <a class="zerostatic" href="https://www.zerostatic.io">www.zerostatic.io</a>. Website by The Open Model Project.'
+  copyright_text: 'Jekyll theme by <a class="zerostatic" href="https://www.zerostatic.io">www.zerostatic.io</a>. Website by The Open Model Project.'
 
 seo:
   meta_og_title: "The Open Model Project"
   meta_og_type: "website"
-  meta_og_url: "https://ezranewman.com/openmodelproject" # todo
-  meta_og_image: "https://raw.githubusercontent.com/zerostaticthemes/jekyll-serif-theme/master/screenshots/tn.png" # todo
+#  meta_og_url: "https://ezranewman.com/openmodelproject" # todo
+  meta_og_image: "https://raw.githubusercontent.com/ExtraE113/OpenModelProject/master/images/Screenshot_2020-12-21%20The%20Open%20Model%20Project.png" # todo
   meta_og_description: "We believe that better election forecasting and transparency are important. Play with the inputs to our model to understand how it works and see how the predictions change."
   meta_twitter_card: "summary"
-  meta_twitter_site: "@zerostaticio" # todo
-  meta_twitter_creator: "@zerostaticio" # todo
+#  meta_twitter_site: "@zerostaticio" # todo
+#  meta_twitter_creator: "@zerostaticio" # todo
 
 collections:
   services:

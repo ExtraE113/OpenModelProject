@@ -20,14 +20,15 @@ bodyClass: page-services-list
 
 <div class="container pt-6 pb-6">
   <div class="row">
-    {% for service in site.services %}
+    {% assign serv = site.services | sort: 'weight'  %}
+    {% for i in (0..serv.size) %}
     <div class="col-12 col-md-6 mb-3">
       <div class="service service-summary">
         <div class="service-content">
           <h2 class="service-title">
-            <a href="{{site.baseurl}}{{ service.url }}">{{ service.title }}</a>
+            <a href="{{site.baseurl}}{{ serv[i].url }}">{{ serv[i].title }}</a>
           </h2>
-          <p>{{ service.content | markdownify | strip_html | truncate: 100 }}</p>
+          <p>{{ serv[i].content | markdownify | strip_html | truncate: 100 }}</p>
         </div>
       </div>
     </div>
