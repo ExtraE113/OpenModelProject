@@ -4,7 +4,7 @@ include: ['_redirects']
 permalink: pretty
 title: 'The Open Model Project'
 
-google_analytics_id: "256889263" # todo test
+google_analytics_id: "G-Z4N8SF220Z" # todo test
 homepage:
   show_call_box: true
 logo:
