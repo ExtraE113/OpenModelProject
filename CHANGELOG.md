@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 Added a UI for the Poll Explorer 
 
+## [1.1.5] - 2020-12-23
+### Added
+Twitter SEO support @OpenModelProj
+
 ## [1.1.4] - 2020-12-22
 ### Added
 404 page
