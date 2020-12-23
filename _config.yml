@@ -4,7 +4,7 @@ include: ['_redirects']
 permalink: pretty
 title: 'The Open Model Project'
 
-google_analytics_id: "G-Z4N8SF220Z" # todo test
+google_analytics_id: "G-Z4N8SF220Z"
 homepage:
   show_call_box: true
 logo:
@@ -21,8 +21,8 @@ seo:
   meta_og_image: "https://raw.githubusercontent.com/ExtraE113/OpenModelProject/master/images/Screenshot_2020-12-21%20The%20Open%20Model%20Project.png"
   meta_og_description: "We believe that better election forecasting and transparency are important. Play with the inputs to our model to understand how it works and see how the predictions change."
   meta_twitter_card: "summary"
-#  meta_twitter_site: "@zerostaticio" # todo
-#  meta_twitter_creator: "@zerostaticio" # todo
+  meta_twitter_site: "@OpenModelProj"
+  meta_twitter_creator: "@OpenModelProj"
 
 collections:
   services:
