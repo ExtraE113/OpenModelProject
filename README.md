@@ -4,7 +4,7 @@
 We believe that better election forecasting and transparency are important. Play with the inputs to our model to understand how it works,
 [download for more options](https://docs.google.com/spreadsheets/d/1BM-HSoegMc6gxu56LCNnpIlm_b6jlDEtztiQ4EF5jy4/copy), and [join our discord server](https://discord.gg/HrnsJZ5baM) to discuss.
 
-![Screenshot](images/Screenshot_2020-12-21 The Open Model Project.png)
+![The Open Model Project](https://github.com/ExtraE113/OpenModelProject/blob/master/images/Screenshot_2020-12-21%20The%20Open%20Model%20Project.png)
 
 ## Installation
 This website is built with Jekyll and React.
