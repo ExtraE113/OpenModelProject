@@ -30,7 +30,7 @@ $sub-footer-text-color: $white;
 @import 'bootstrap-variables';
 @import 'bootstrap/bootstrap-reboot';
 @import 'bootstrap/bootstrap-grid';
-// @import 'bootstrap/bootstrap'; // Uncomment this line to import the entire Bootstrap library
+ @import 'bootstrap/bootstrap'; // Uncomment this line to import the entire Bootstrap library
 
 
 // Libraries
@@ -56,6 +56,7 @@ $sub-footer-text-color: $white;
 @import 'components/feature';
 @import 'components/social';
 @import 'components/prediction';
+@import 'components/form-inputs';
 
 // Pages
 @import 'pages/home';

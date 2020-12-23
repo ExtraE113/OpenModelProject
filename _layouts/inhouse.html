@@ -1,0 +1,101 @@
+---
+layout: default
+---
+<script src="/assets/js/sliders.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="container pb-6 pt-6 pt-md-10 pb-md-10">
+    <div class="row justify-content-start">
+        <div class="col-12 col-md-8">
+            <div class="service service-single">
+                <h1 class="title">{{page.title}}</h1>
+                <div class="content">
+                    {{content}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="strip" id="prediction-statics">
+        <div class="container pt-3 pb-3 pb-md-5">
+            <div class="row align-items-center justify-content-start">
+                <div class="col">
+                    <form oninput="updateOutputs()">
+                        <h2>Change the weighting</h2>
+                        <p>Polls are weighted to ensure that they are representative but this weighting can be
+                            subjective.
+                            Change the weighting and see how the margins change!</p>
+
+                        <h2>Simple Collapsible</h2>
+                        <a href="#demo" class="btn btn-info" data-toggle="collapse">Simple collapsible</a>
+                        <div id="demo" class="collapse">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+
+                        <a data-toggle="collapse" href="#qc">Quality control</a>
+                        <div class="collapse" id="qc">
+                            <p>Online surveys do not always produce accurate information - sometimes participants could
+                                be deliberately dishonest or otherwise low quality to the extent where it is best to
+                                remove them when conducting with analysis.</p>
+                            <div class="form-group">
+                                <label for="somewhathonest">Somewhat honest penalty <br>(default: 100)</label>
+                                <input type="range" class="form-control-range" id="somewhathonest" min="0" max="100"
+                                       value="100">
+                                <output for="somewhathonest" class="auto-output">100</output>
+                            </div>
+                            <div class="form-group">
+                                <label for="nothonest">Not at all honest penalty <br>(default: 100)</label>
+                                <input type="range" class="form-control-range" id="nothonest" min="0" max="100"
+                                       value="100">
+                                <output for="nothonest" class="auto-output">100</output>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label" for="excludeIncorrect">
+                                    <input class="form-check-input" type="checkbox" value="" id="excludeIncorrect"
+                                           checked>
+                                    Exclude users who failed an attention check
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="col">
+                    <div class="prediction prediction-summary">
+                        <div class="prediction-content">
+                            <h2 class="prediction-number" id="regular-headline">Warnock +1.2</h2>
+                            <h3 class="prediction-margin" id="regular-margin">&#177;3</h3>
+                            <p class="prediction-title">Georgia Regular Election Findings</p>
+                        </div>
+                    </div>
+                    <div class="prediction prediction-summary">
+                        <div class="prediction-content">
+                            <h2 class="prediction-number" id="special-headline">Loffler +1.2</h2>
+                            <h3 class="prediction-margin" id="special-margin">&#177;3</h3>
+                            <p class="prediction-title">Georgia Special Election Findings</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!--button-->
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <a class="button button-primary"
+                   href="">
+                    <!--todo link-->
+                    Download the complete findings</a>
+            </div>
+        </div>
+    </div>
+</div>
+
