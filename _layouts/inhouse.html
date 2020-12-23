@@ -3,10 +3,6 @@ layout: default
 ---
 <script src="/assets/js/sliders.js"></script>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
 <div class="container pb-6 pt-6 pt-md-10 pb-md-10">
     <div class="row justify-content-start">
         <div class="col-12 col-md-8">
@@ -28,38 +24,203 @@ layout: default
                             subjective.
                             Change the weighting and see how the margins change!</p>
 
-                        <h2>Simple Collapsible</h2>
-                        <a href="#demo" class="btn btn-info" data-toggle="collapse">Simple collapsible</a>
-                        <div id="demo" class="collapse">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </div>
-
-                        <a data-toggle="collapse" href="#qc">Quality control</a>
+                        <h2><a data-toggle="collapse" href="#qc">Quality control</a></h2>
                         <div class="collapse" id="qc">
                             <p>Online surveys do not always produce accurate information - sometimes participants could
                                 be deliberately dishonest or otherwise low quality to the extent where it is best to
                                 remove them when conducting with analysis.</p>
                             <div class="form-group">
-                                <label for="somewhathonest">Somewhat honest penalty <br>(default: 100)</label>
+                                <label for="somewhathonest">
+                                    <h3>Somewhat honest penalty</h3>
+                                    <p>After they completed the rest of the survey, we asked users how honest they'd
+                                        been. We then discount users who admit to only being somewhat honest. A penalty
+                                        of 100 means we exclude them completely, while a penalty of zero means we treat
+                                        them as if they'd answered "Very Honestly" or "Completely Honestly"</p>
+                                    <p>(default: 100)</p>
+                                </label>
                                 <input type="range" class="form-control-range" id="somewhathonest" min="0" max="100"
                                        value="100">
                                 <output for="somewhathonest" class="auto-output">100</output>
                             </div>
                             <div class="form-group">
-                                <label for="nothonest">Not at all honest penalty <br>(default: 100)</label>
+                                <label for="somewhathonest">
+                                    <h3>Not at all honest penalty</h3>
+                                    <p>This is the same as above but for users who said they'd been "not at all
+                                        honest"</p>
+                                    <p>(default: 100)</p>
+                                </label>
                                 <input type="range" class="form-control-range" id="nothonest" min="0" max="100"
                                        value="100">
                                 <output for="nothonest" class="auto-output">100</output>
                             </div>
                             <div class="form-check">
+                                <h4></h4>
                                 <label class="form-check-label" for="excludeIncorrect">
                                     <input class="form-check-input" type="checkbox" value="" id="excludeIncorrect"
                                            checked>
                                     Exclude users who failed an attention check
                                 </label>
                             </div>
+                        </div>
+                        <h2><a data-toggle="collapse" href="#dw">Demographic Weighting</a></h2>
+                        <div class="collapse" id="dw">
+                            <p>Surveys only capture a sample of the population, so we know that the result probably
+                                won’t exactly match the “true” result that we would get if we surveyed everyone in the
+                                population or that we would expect to see on election day.</p>
+                            <p>Without adjustment, surveys tend to over represent people who are easier to reach and
+                                underrepresent those types of people who are harder to reach. In order to make the
+                                results more representative we weight the data so that it matches the population – based
+                                on a number of demographic measures. Weighting is a crucial step for avoiding biased
+                                results, but it also has the effect of making the margin of error larger. Using US
+                                Census data, we can get a rough sense of the proportions of gender, race, and age we
+                                would expect to see in our sample.</p>
+                            <div class="form-check">
+                                <h4></h4>
+                                <label class="form-check-label" for="censusWeight">
+                                    <input class="form-check-input" type="checkbox" value="" id="censusWeight"
+                                           checked>
+                                    Weight data based off the census
+                                </label>
+                            </div>
+                        </div>
+                        <h2><a data-toggle="collapse" href="#likelyGroup">Likely Voters</a></h2>
+                        <div class="collapse" id="likelyGroup">
+                            <p>To create a view of what will happen on election day, it is important to only sample
+                                those who vote. However, many people ineligible to vote and eligible voters who end up
+                                deciding not to vote still show up in our survey sample. To resolve this, we create a
+                                probabilistic likely voter model and weigh our results accordingly.</p>
+                            <p>Our likely voter model is based on the Perry-Gallup index outlined in <a
+                                    href="https://www.pewresearch.org/methods/2016/01/07/measuring-the-likelihood-to-vote/"
+                                    target="_blank" rel="noopener noreferrer">Pew 2016</a>.</p>
+                            <p>We give respondents "points" that estimate how likely we think they are to vote. More
+                                points means we think they're more likely to vote.</p>
+
+                            <h3>How many points to give respondents who...</h3>
+                            <h4><h4><a data-toggle="collapse" href="#thinkingCollection">Thinking about the election</a></h4></h4>
+                            <div class="collapse" id="thinkingCollection">
+                                <div class="form-group">
+                                    <label for="thinkingALot">
+                                        <p>said they were thinking about the election "Quite a lot" (default 1)</p>
+                                    </label>
+                                    <input type="range" class="form-control-range" id="thinkingALot" min="0" max="2"
+                                           value="1" step="0.001">
+                                    <output for="thinkingALot" class="auto-output">1</output>
+                                </div>
+                                <div class="form-group">
+                                    <label for="thinkingSome">
+                                        <p>said they were thinking about the election "some" (default 0.7)</p>
+                                    </label>
+                                    <input type="range" class="form-control-range" id="thinkingSome" min="0" max="2"
+                                           value="0.7" step="0.001">
+                                    <output for="thinkingSome" class="auto-output">0.7</output>
+                                </div>
+                                <div class="form-group">
+                                    <label for="thinkingLittle">
+                                        <p>said they were thinking about the election "only a little" (default 0)</p>
+                                    </label>
+                                    <input type="range" class="form-control-range" id="thinkingLittle" min="0" max="2"
+                                           value="0" step="0.001">
+                                    <output for="thinkingLittle" class="auto-output">0</output>
+                                </div>
+                            </div>
+                            <h4><h4><a data-toggle="collapse" href="#planningCollection">Plan to vote/not vote</a></h4></h4>
+                            <div class="collapse" id="planningCollection">
+                                <div class="form-group">
+                                    <label for="veryLikely">
+                                        <p>said they were "very likely" to vote (default 1)</p>
+                                    </label>
+                                    <input type="range" class="form-control-range" id="veryLikely" min="0" max="2"
+                                           value="1" step="0.001">
+                                    <output for="veryLikely" class="auto-output">1</output>
+                                </div>
+                                <div class="form-group">
+                                    <label for="likely">
+                                        <p>said they were "likely" to vote (default 0.7)</p>
+                                    </label>
+                                    <input type="range" class="form-control-range" id="likely" min="0" max="2"
+                                           value="0.7" step="0.001">
+                                    <output for="likely" class="auto-output">0.7</output>
+                                </div>
+                                <div class="form-group">
+                                    <label for="neitherLikelyNorUnlikely">
+                                        <p>said they were "neither likely nor unlikely" to vote (default 0.4)</p>
+                                    </label>
+                                    <input type="range" class="form-control-range" id="neitherLikelyNorUnlikely" min="0" max="2"
+                                           value="0.4" step="0.001">
+                                    <output for="neitherLikelyNorUnlikely" class="auto-output">0.4</output>
+                                </div>
+                                <div class="form-group">
+                                    <label for="somewhatUnlikely">
+                                        <p>said they were "somewhat unlikely" to vote (default 0.1)</p>
+                                    </label>
+                                    <input type="range" class="form-control-range" id="somewhatUnlikely" min="0" max="2"
+                                           value="0.1" step="0.001">
+                                    <output for="somewhatUnlikely" class="auto-output">0.1</output>
+                                </div>
+                                <div class="form-group">
+                                    <label for="unlikely">
+                                        <p>said they were "unlikely" to vote (default 0.05)</p>
+                                    </label>
+                                    <input type="range" class="form-control-range" id="unlikely" min="0" max="2"
+                                           value="0.05" step="0.001">
+                                    <output for="unlikely" class="auto-output">0.05</output>
+                                </div>
+                            </div>
+                            <h4><h4><a data-toggle="collapse" href="#historyCollection">Voted in the past</a></h4></h4>
+                            <div class="collapse" id="historyCollection">
+                                <div class="form-group">
+                                    <label for="voted2016">
+                                        <p>said they voted in 2016 or weren't old enough to vote in 2016 (default 1)</p>
+                                    </label>
+                                    <input type="range" class="form-control-range" id="voted2016" min="0" max="2"
+                                           value="1" step="0.001">
+                                    <output for="voted2016" class="auto-output">1</output>
+                                </div>
+                            </div>
+                            <h4><h4><a data-toggle="collapse" href="#votePrep">Voting preparations</a></h4></h4>
+                            <div class="collapse" id="votePrep">
+                                <div class="form-group">
+                                    <label for="voteInPersonOrRecieved">
+                                        <p>said they plan to vote in person or have already received their mail-in ballot. (default: 1)</p>
+                                    </label>
+                                    <input type="range" class="form-control-range" id="voteInPersonOrRecieved" min="0" max="2"
+                                           value="1" step="0.001">
+                                    <output for="voteInPersonOrRecieved" class="auto-output">1</output>
+                                </div>
+                                <div class="form-group">
+                                    <label for="requestedNotReceived">
+                                        <p>said they requested but have not received their mail-in ballot. (default: 0.8)</p>
+                                    </label>
+                                    <input type="range" class="form-control-range" id="requestedNotReceived" min="0" max="2"
+                                           value="0.8" step="0.001">
+                                    <output for="requestedNotReceived" class="auto-output">0.8</output>
+                                </div>
+                                <div class="form-group">
+                                    <label for="notRequested">
+                                        <p>said they have not yet requested their mail-in ballot. (default: 0.4)</p>
+                                    </label>
+                                    <input type="range" class="form-control-range" id="notRequested" min="0" max="2"
+                                           value="0.4" step="0.001">
+                                    <output for="notRequested" class="auto-output">0.4</output>
+                                </div>
+                            </div>
+                            <h4>Give voters who already voted max points</h4>
+                            <div class="form-check">
+                                <label class="form-check-label" for="alreadyVoted">
+                                    <input class="form-check-input" type="checkbox" value="" id="alreadyVoted"
+                                           checked>
+                                    Override above and give voters maximum points if they already voted? (Highly recommended)
+                                </label>
+                            </div>
+                            <h4>Give voters who aren't registered 0 points</h4>
+                            <div class="form-check">
+                                <label class="form-check-label" for="notRegistered">
+                                    <input class="form-check-input" type="checkbox" value="" id="notRegistered"
+                                           checked>
+                                    Override above and give voters zero points if they aren't registered? (Highly recommended)
+                                </label>
+                            </div>
+
                         </div>
                     </form>
                 </div>
