@@ -1,0 +1,10 @@
+<div class="form-check">
+    <label class="form-check-label" for="{{ include.id }}">
+        <input class="form-check-input" type="checkbox" value="" id="{{ include.id }}"
+               {% if include.checked != false %}
+                checked
+                {% endif %}
+        >
+        {{ include.text }}
+    </label>
+</div>

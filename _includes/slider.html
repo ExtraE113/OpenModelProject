@@ -1,0 +1,15 @@
+<div class="form-group">
+    <label for="{{ include.id }}">
+        <h3>{{ include.title }}</h3>
+        <p>{{ include.text }}</p>
+        <p>(default: {{ include.defaultValue }})</p>
+    </label>
+    <input type="range" class="form-control-range" id="{{ include.id }}" min="{{ include.min | default: 0 }}"
+           max="{{ include.max | default: 100 }}"
+           value="{{ include.defaultValue }}"
+           { %if include.step }
+           step="{{ include.step}}"
+           { %endif }
+    >
+    <output for="{{ include.id }}" class="auto-output">{{ include.defaultValue }}</output>
+</div>
