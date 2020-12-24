@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 Added a UI for the Poll Explorer 
 
+## [1.2.0] - 2020-12-24
+### Changed
+On-website options changed
+`model-switcher.js` improved
+
 ## [1.1.5] - 2020-12-23
 ### Added
 Twitter SEO support @OpenModelProj
