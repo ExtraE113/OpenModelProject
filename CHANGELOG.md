@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.2] - 2020-12-24
+### Changed
+Minor update to use much faster api
+
 ## [1.3.1] - 2020-12-24
 ### Changed
 Language in methodology section is now correct

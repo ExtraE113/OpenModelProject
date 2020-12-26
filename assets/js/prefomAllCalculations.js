@@ -42,12 +42,19 @@ function getUpdatedValues() {
             }
         )
 
-        const correct_order = ['gender', 'race', 'education', 'income', 'age', 'vote2016', 'vote2020', 'loc_county',
+        const weigh_on_key = ['gender', 'race', 'education', 'income', 'age', 'vote2016', 'vote2020', 'loc_county',
             'gss_trust', 'gss_bible', 'gss_spanking', 'social_fb'];
 
-        weigh_on.sort(function (a, b) {
-            return correct_order.indexOf(a) - correct_order.indexOf(b);
-        });
+        let weigh_on_code = ""
+
+        for (let i = 0; i < weigh_on_key.length; i++) {
+            if (weigh_on.includes(weigh_on_key[i])){
+                weigh_on_code += "1"
+            } else {
+                weigh_on_code += "0"
+            }
+        }
+
 
         let body = {
             "very likely": parseFloat(document.getElementById("veryLikely").value),
@@ -58,7 +65,7 @@ function getUpdatedValues() {
             "somewhat unlikely": parseFloat(document.getElementById("somewhatUnlikely").value),
             "unlikely": parseFloat(document.getElementById("unlikely").value),
             "2020 voted": parseFloat(document.getElementById("turnout2020").value),
-            weigh_on: weigh_on
+            "weigh_on_code": weigh_on_code
         }
 
 
