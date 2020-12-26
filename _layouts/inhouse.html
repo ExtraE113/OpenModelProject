@@ -1,0 +1,241 @@
+---
+layout: default
+---
+<script src="/assets/js/sliders.js"></script>
+<script src="/assets/js/checkbox.js"></script>
+<script src="/assets/js/prefomAllCalculations.js"></script>
+
+
+<div class="container pb-6 pt-6 pt-md-10 pb-md-10">
+    <div class="row justify-content-start">
+        <div class="col-12 col-md-8">
+            <div class="service service-single">
+                <h1 class="title">{{page.title}}</h1>
+                <div class="content">
+                    {{content}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="strip" id="prediction-statics">
+        <div class="container pt-3 pb-3 pb-md-5">
+            <div class="row align-items-center justify-content-start">
+                <!--INPUTS:-->
+                <div class="col">
+                    <form oninput="updateOutputs()" onmouseup="getUpdatedValues()">
+                        <h2>Change the weighting</h2>
+                        <p>Polls are weighted to ensure that they are representative but this weighting can be
+                            subjective.
+                            Change the weighting and see how the margins change!</p>
+
+                        <!--todo there's a useful bit abt quality control in _old-bits.txt-->
+
+
+                        <h2><a data-toggle="collapse" href="#dw">Demographic Weighting</a></h2>
+                        <div class="collapse" id="dw">
+                            <p>Surveys only capture a sample of the population, so we know that the result probably
+                                won’t exactly match the “true” result that we would get if we surveyed everyone in the
+                                population or that we would expect to see on election day.</p>
+                            <p>Without adjustment, surveys tend to over represent people who are easier to reach and
+                                underrepresent those types of people who are harder to reach. In order to make the
+                                results more representative we weight the data so that it matches the population – based
+                                on a number of demographic measures. Weighting is a crucial step for avoiding biased
+                                results, but it also has the effect of making the margin of error larger. Using US
+                                Census data and voting history, we can get a rough sense of the proportions of gender,
+                                race, age, and political/voting history we would expect to see in our sample.</p>
+
+                            {% include checkbox.html id="census-overall" text="Weight data based off the
+                            census. (Traditional weights)" classes="option census-data"%}
+
+
+                            {% include checkbox.html id="gender" text="Gender"
+                            classes="subOption census-data weight" parentClasses="pl-4"%}
+
+                            {% include checkbox.html id="race" text="Race" classes="subOption census-data weight"
+                            parentClasses="pl-4"%}
+
+                            {% include checkbox.html id="education" text="Education"
+                            classes="subOption census-data weight" parentClasses="pl-4"%}
+
+                            {% include checkbox.html id="income" text="Income"
+                            classes="subOption census-data weight" parentClasses="pl-4"%}
+
+                            {% include checkbox.html id="age" text="Age" classes="subOption census-data weight"
+                            parentClasses="pl-4"%}
+
+                            {% include checkbox.html id="loc_county" text="Location (county)"
+                            classes="subOption census-data weight" parentClasses="pl-4"%}
+
+
+                            {% include checkbox.html id="past-vote-overall" text="Weight data based off past voting
+                            history.
+                            (Traditional weights)" classes="option past-vote-data"%}
+
+
+                            {% include checkbox.html id="vote2016" text="2016 Presidential Election
+                            Vote" classes="subOption past-vote-data weight" parentClasses="pl-4"%}
+
+                            {% include checkbox.html id="vote2020" text="2020 Presidential Election
+                            Vote" classes="subOption past-vote-data weight" parentClasses="pl-4"%}
+
+
+                            {% include checkbox.html id="experimental-overall" text="Weight data based off more
+                            experimental factors" classes="option experimental-data weight"%}
+
+
+                            {% include checkbox.html id="gss_trust" text="General social trust-- adjust for people who
+                            trust strangers more being more likely to take surveys" classes="subOption
+                            experimental-data weight" parentClasses="pl-4"%}
+
+                            {% include checkbox.html id="gss_bible" text="Adjust for views on the bible"
+                            classes="subOption experimental-data weight" parentClasses="pl-4"%}
+
+                            {% include checkbox.html id="gss_spanking" text="Adjust for views spanking children, a proxy
+                            for income and many social views." classes="subOption experimental-data weight"
+                            parentClasses="pl-4"%}
+
+                            {% include checkbox.html id="social_fb" text="Adjust for facebook usage." classes="subOption
+                            experimental-data weight" parentClasses="pl-4"%}
+
+
+                        </div>
+
+
+                        <h2><a data-toggle="collapse" href="#likelyGroup">Likely Voters</a></h2>
+                        <div class="collapse" id="likelyGroup">
+                            <p>To create a view of what will happen on election day, it is important to only sample
+                                those who vote. However, many people ineligible to vote and eligible voters who end up
+                                deciding not to vote still show up in our survey sample. To resolve this, we create a
+                                probabilistic likely voter model and weigh our results accordingly.</p>
+                            <p>Our likely voter model is based on the Perry-Gallup index outlined in <a
+                                    href="https://www.pewresearch.org/methods/2016/01/07/measuring-the-likelihood-to-vote/"
+                                    target="_blank" rel="noopener noreferrer">Pew 2016</a>.</p>
+                            <p>We give respondents "points" that estimate how likely we think they are to vote. More
+                                points means we think they're more likely to vote.</p>
+
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="likely-voter-on" checked>
+                                <label class="custom-control-label" for="likely-voter-on">Enable the likely voter model.
+                                    Turning this off switches the poll to registered voters.</label>
+                            </div>
+                            <br>
+
+                            <h3>How many points to give respondents who...</h3>
+                            <!--old bits-->
+                            <!--                            <h4><a data-toggle="collapse" href="#planningCollection">Plan to vote/not vote/already-->
+                            <!--                                voted</a></h4>-->
+
+                            <div id="planningCollection">
+
+                                {% include slider.html text="turned out in 2020"
+                                id="turnout2020" min="0" max="2" defaultValue="0.5" step="0.001" %}
+
+
+                                {% include slider.html text="said they already voted"
+                                id="alreadyVoted" min="0" max="2" defaultValue="1" step="0.001" %}
+
+                                {% include slider.html text="said they were \"very likely\" to vote"
+                                id="veryLikely" min="0" max="2" defaultValue="1" step="0.001" %}
+
+                                {% include slider.html text="said they were \"likely\" to vote"
+                                id="likely" min="0" max="2" defaultValue="0.7" step="0.001" %}
+
+                                {% include slider.html text="said they were \"somewhat likely\" to vote"
+                                id="somewhatLikely" min="0" max="2" defaultValue="0.4" step="0.001" %}
+
+                                {% include slider.html text="said they were \"neither likely nor unlikely\" to vote"
+                                id="neitherLikelyNorUnlikely" min="0" max="2" defaultValue="0.2" step="0.001" %}
+
+                                {% include slider.html text="said they were \"somewhat unlikely\" to vote"
+                                id="somewhatUnlikely" min="0" max="2" defaultValue="0.1" step="0.001" %}
+
+                                {% include slider.html text="said they were \"unlikely\" to vote"
+                                id="unlikely" min="0" max="2" defaultValue="0.05" step="0.001" %}
+                            </div>
+
+                            <!-- useful bit here with more options in _old-bits.txt-->
+
+                        </div>
+                    </form>
+                </div>
+
+                <!--OUTPUTS:-->
+                <div class="col">
+                    <div class="prediction prediction-summary">
+                        <div class="prediction-content">
+                            <h2 class="prediction-number">
+                                <div class="ph-item">
+                                    <div class="ph-col-12">
+                                        <div class="ph-row">
+                                            <div class="ph-col-12 big"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </h2>
+                            <h2 class="prediction-number" id="regular-headline">
+                                <noscript>Enable Javascript to view results</noscript>
+                            </h2>
+                            <div class="ph-item">
+                                <div class="ph-item">
+                                    <div class="ph-col-12">
+                                        <div class="ph-row">
+                                            <div class="ph-col-4 empty"></div>
+                                            <div class="ph-col-4"></div>
+                                            <div class="ph-col-4 empty"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="prediction-margin" id="regular-margin">
+                            </h3>
+                            <p class="prediction-title">Georgia Regular Election Findings</p>
+                        </div>
+                    </div>
+                    <div class="prediction prediction-summary">
+                        <div class="prediction-content">
+                            <h2 class="prediction-number">
+                                <div class="ph-item">
+                                    <div class="ph-col-12">
+                                        <div class="ph-row">
+                                            <div class="ph-col-12 big"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </h2>
+                            <h2 class="prediction-number" id="special-headline">
+                                <noscript>Enable Javascript to view results</noscript>
+                            </h2>
+                            <h3 class="prediction-margin">
+                                <div class="ph-item">
+                                    <div class="ph-col-12">
+                                        <div class="ph-row">
+                                            <div class="ph-col-4 empty"></div>
+                                            <div class="ph-col-4"></div>
+                                            <div class="ph-col-4 empty"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </h3>
+                            <h3 class="prediction-margin" id="special-margin">
+                            </h3>
+                            <p class="prediction-title">Georgia Special Election Findings</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!--button-->
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <a class="button button-primary"
+                   href="/responses_processed.csv">
+                    Download the complete findings</a>
+            </div>
+        </div>
+    </div>
+</div>
+

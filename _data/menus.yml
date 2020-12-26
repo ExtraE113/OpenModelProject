@@ -1,7 +1,10 @@
 main:
+  - name: "Our Polls"
+    url: "/inhouse/"
+    weight: 1
   - name: "Features"
     url: "/features/"
-    weight: 1
+    weight: 2
   - name: "Team"
     url: "/team/"
     weight: 3
@@ -16,9 +19,12 @@ footer:
   - name: "Home"
     url: "/"
     weight: 1
-  - name: "Contact"
-    url: "/contact/"
-    weight: 2
   - name: "About"
     url: "/about/"
     weight: 2
+  - name: "Our Polls"
+    url: "/inhouse/"
+    weight: 3
+  - name: "Contact"
+    url: "/contact/"
+    weight: 4
