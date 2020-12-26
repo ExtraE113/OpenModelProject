@@ -1,11 +1,29 @@
-# Changelog
+---
+title: 'Changelog'
+layout: page
+---
+
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-Added a UI for the Poll Explorer 
+
+## [1.3.1] - 2020-12-24
+### Changed
+Language in methodology section is now correct
+
+## [1.3.0] - 2020-12-24
+### Added
+poll explorer, based off API that re-executes code every time  
+Removed changelog from ignore and tweaked formatting
+
+## [1.2.0] - 2020-12-24
+### Changed
+On-website options changed
+`model-switcher.js` improved
 
 ## [1.1.5] - 2020-12-23
 ### Added

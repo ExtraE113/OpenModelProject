@@ -1,9 +1,10 @@
 ---
 layout: default
 ---
-<script src="/assets/js/prefomAllCalculations.js"></script>
-<script src="/assets/js/points.js"></script>
 <script src="/assets/js/sliders.js"></script>
+<script src="/assets/js/checkbox.js"></script>
+<script src="/assets/js/prefomAllCalculations.js"></script>
+
 
 <div class="container pb-6 pt-6 pt-md-10 pb-md-10">
     <div class="row justify-content-start">
@@ -21,39 +22,13 @@ layout: default
             <div class="row align-items-center justify-content-start">
                 <!--INPUTS:-->
                 <div class="col">
-                    <form oninput="updateOutputs()">
+                    <form oninput="updateOutputs()" onmouseup="getUpdatedValues()">
                         <h2>Change the weighting</h2>
                         <p>Polls are weighted to ensure that they are representative but this weighting can be
                             subjective.
                             Change the weighting and see how the margins change!</p>
 
-                        <h2><a data-toggle="collapse" href="#qc">Quality control</a></h2>
-                        <div class="collapse" id="qc">
-                            <p>Online surveys do not always produce accurate information - sometimes participants could
-                                be deliberately dishonest or otherwise low quality to the extent where it is best to
-                                remove them when conducting with analysis.</p>
-                            <!--<editor-fold desc="honestySliders">-->
-                            {%
-                            include slider.html title="Somewhat honest penalty" text="After they completed the rest
-                            of the survey, we asked users how honest they'd
-                            been. We then discount users who admit to only being somewhat honest. A penalty
-                            of 100 means we exclude them completely, while a penalty of zero means we treat
-                            them as if they'd answered \"Very Honestly\" or \"Completely Honestly\"" defaultValue="100"
-                            id="somewhathonest"
-                            %}
-                            <!---->
-                            <!---->
-                            <!---->
-                            {%
-                            include slider.html title="Not at all honest penalty" text="This is the same as above but
-                            for users who said they'd been \"not at all honest\"" defaultValue="100" id="nothonest"
-                            %}
-                            <!--</editor-fold>-->
-
-                            {% include checkbox.html id="excludeIncorrect" text="Exclude users who failed an attention
-                            check" %}
-
-                        </div>
+                        <!--todo there's a useful bit abt quality control in _old-bits.txt-->
 
 
                         <h2><a data-toggle="collapse" href="#dw">Demographic Weighting</a></h2>
@@ -66,10 +41,63 @@ layout: default
                                 results more representative we weight the data so that it matches the population – based
                                 on a number of demographic measures. Weighting is a crucial step for avoiding biased
                                 results, but it also has the effect of making the margin of error larger. Using US
-                                Census data, we can get a rough sense of the proportions of gender, race, and age we
-                                would expect to see in our sample.</p>
+                                Census data and voting history, we can get a rough sense of the proportions of gender,
+                                race, age, and political/voting history we would expect to see in our sample.</p>
 
-                            {% include checkbox.html id="censusWeight" text="Weight data based off the census"%}
+                            {% include checkbox.html id="census-overall" text="Weight data based off the
+                            census. (Traditional weights)" classes="option census-data"%}
+
+
+                            {% include checkbox.html id="gender" text="Gender"
+                            classes="subOption census-data weight" parentClasses="pl-4"%}
+
+                            {% include checkbox.html id="race" text="Race" classes="subOption census-data weight"
+                            parentClasses="pl-4"%}
+
+                            {% include checkbox.html id="education" text="Education"
+                            classes="subOption census-data weight" parentClasses="pl-4"%}
+
+                            {% include checkbox.html id="income" text="Income"
+                            classes="subOption census-data weight" parentClasses="pl-4"%}
+
+                            {% include checkbox.html id="age" text="Age" classes="subOption census-data weight"
+                            parentClasses="pl-4"%}
+
+                            {% include checkbox.html id="loc_county" text="Location (county)"
+                            classes="subOption census-data weight" parentClasses="pl-4"%}
+
+
+                            {% include checkbox.html id="past-vote-overall" text="Weight data based off past voting
+                            history.
+                            (Traditional weights)" classes="option past-vote-data"%}
+
+
+                            {% include checkbox.html id="vote2016" text="2016 Presidential Election
+                            Vote" classes="subOption past-vote-data weight" parentClasses="pl-4"%}
+
+                            {% include checkbox.html id="vote2020" text="2020 Presidential Election
+                            Vote" classes="subOption past-vote-data weight" parentClasses="pl-4"%}
+
+
+                            {% include checkbox.html id="experimental-overall" text="Weight data based off more
+                            experimental factors" classes="option experimental-data weight"%}
+
+
+                            {% include checkbox.html id="gss_trust" text="General social trust-- adjust for people who
+                            trust strangers more being more likely to take surveys" classes="subOption
+                            experimental-data weight" parentClasses="pl-4"%}
+
+                            {% include checkbox.html id="gss_bible" text="Adjust for views on the bible"
+                            classes="subOption experimental-data weight" parentClasses="pl-4"%}
+
+                            {% include checkbox.html id="gss_spanking" text="Adjust for views spanking children, a proxy
+                            for income and many social views." classes="subOption experimental-data weight"
+                            parentClasses="pl-4"%}
+
+                            {% include checkbox.html id="social_fb" text="Adjust for facebook usage." classes="subOption
+                            experimental-data weight" parentClasses="pl-4"%}
+
+
                         </div>
 
 
@@ -85,33 +113,38 @@ layout: default
                             <p>We give respondents "points" that estimate how likely we think they are to vote. More
                                 points means we think they're more likely to vote.</p>
 
-                            <h3>How many points to give respondents who...</h3>
-                            <h4><h4><a data-toggle="collapse" href="#thinkingCollection">Thinking about the election</a>
-                            </h4></h4>
-                            <div class="collapse" id="thinkingCollection">
-                                {% include slider.html text="said they were thinking about the election \"Quite a lot\""
-                                id="thinkingALot" min="0" max="2" defaultValue="1" step="0.001" %}
-
-
-                                {% include slider.html text="said they were thinking about the election \"some\""
-                                id="some" min="0" max="2" defaultValue="0.7" step="0.001" %}
-
-
-                                {% include slider.html text="said they were thinking about the election \"only a
-                                little\""
-                                id="thinkingLittle" min="0" max="2" defaultValue="0" step="0.001" %}
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="likely-voter-on" checked>
+                                <label class="custom-control-label" for="likely-voter-on">Enable the likely voter model.
+                                    Turning this off switches the poll to registered voters.</label>
                             </div>
-                            <h4><h4><a data-toggle="collapse" href="#planningCollection">Plan to vote/not vote</a></h4>
-                            </h4>
-                            <div class="collapse" id="planningCollection">
+                            <br>
+
+                            <h3>How many points to give respondents who...</h3>
+                            <!--old bits-->
+                            <!--                            <h4><a data-toggle="collapse" href="#planningCollection">Plan to vote/not vote/already-->
+                            <!--                                voted</a></h4>-->
+
+                            <div id="planningCollection">
+
+                                {% include slider.html text="turned out in 2020"
+                                id="turnout2020" min="0" max="2" defaultValue="0.5" step="0.001" %}
+
+
+                                {% include slider.html text="said they already voted"
+                                id="alreadyVoted" min="0" max="2" defaultValue="1" step="0.001" %}
+
                                 {% include slider.html text="said they were \"very likely\" to vote"
                                 id="veryLikely" min="0" max="2" defaultValue="1" step="0.001" %}
 
                                 {% include slider.html text="said they were \"likely\" to vote"
                                 id="likely" min="0" max="2" defaultValue="0.7" step="0.001" %}
 
+                                {% include slider.html text="said they were \"somewhat likely\" to vote"
+                                id="somewhatLikely" min="0" max="2" defaultValue="0.4" step="0.001" %}
+
                                 {% include slider.html text="said they were \"neither likely nor unlikely\" to vote"
-                                id="neitherLikelyNorUnlikely" min="0" max="2" defaultValue="0.4" step="0.001" %}
+                                id="neitherLikelyNorUnlikely" min="0" max="2" defaultValue="0.2" step="0.001" %}
 
                                 {% include slider.html text="said they were \"somewhat unlikely\" to vote"
                                 id="somewhatUnlikely" min="0" max="2" defaultValue="0.1" step="0.001" %}
@@ -119,32 +152,8 @@ layout: default
                                 {% include slider.html text="said they were \"unlikely\" to vote"
                                 id="unlikely" min="0" max="2" defaultValue="0.05" step="0.001" %}
                             </div>
-                            <h4><h4><a data-toggle="collapse" href="#historyCollection">Voted in the past</a></h4></h4>
-                            <div class="collapse" id="historyCollection">
-                                {% include slider.html text="said they voted in 2016 or weren't old enough to vote in
-                                2016"
-                                id="voted2016" min="0" max="2" defaultValue="1" step="0.001" %}
-                            </div>
-                            <h4><h4><a data-toggle="collapse" href="#votePrep">Voting preparations</a></h4></h4>
-                            <div class="collapse" id="votePrep">
-                                {% include slider.html text="said they plan to vote in person or have already received
-                                their mail-in ballot." id="voteInPersonOrReceived" min="0" max="2" defaultValue="1"
-                                step="0.001" %}
 
-                                {% include slider.html text="said they have requested but not received their mail-in
-                                ballot." id="requestedNotReceived" min="0" max="2" defaultValue="0.8" step="0.001" %}
-
-                                {% include slider.html text="said they have not yet requested their mail-in ballot."
-                                id="notRequested" min="0" max="2" defaultValue="0.4" step="0.001" %}
-                            </div>
-                            <h4>Give voters who already voted max points</h4>
-                            {% include checkbox.html id="alreadyVoted" text="Override above and give voters maximum
-                            points if they already voted? (Highly
-                            recommended)" %}
-                            <h4>Give voters who aren't registered 0 points</h4>
-                            {% include checkbox.html id="notRegistered" text="Override above and give voters 0
-                            points if they aren't registered? (Highly
-                            recommended)"%}
+                            <!-- useful bit here with more options in _old-bits.txt-->
 
                         </div>
                     </form>
@@ -154,15 +163,61 @@ layout: default
                 <div class="col">
                     <div class="prediction prediction-summary">
                         <div class="prediction-content">
-                            <h2 class="prediction-number" id="regular-headline">Warnock +1.2</h2>
-                            <h3 class="prediction-margin" id="regular-margin">&#177;3</h3>
+                            <h2 class="prediction-number">
+                                <div class="ph-item">
+                                    <div class="ph-col-12">
+                                        <div class="ph-row">
+                                            <div class="ph-col-12 big"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </h2>
+                            <h2 class="prediction-number" id="regular-headline">
+                                <noscript>Enable Javascript to view results</noscript>
+                            </h2>
+                            <div class="ph-item">
+                                <div class="ph-item">
+                                    <div class="ph-col-12">
+                                        <div class="ph-row">
+                                            <div class="ph-col-4 empty"></div>
+                                            <div class="ph-col-4"></div>
+                                            <div class="ph-col-4 empty"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="prediction-margin" id="regular-margin">
+                            </h3>
                             <p class="prediction-title">Georgia Regular Election Findings</p>
                         </div>
                     </div>
                     <div class="prediction prediction-summary">
                         <div class="prediction-content">
-                            <h2 class="prediction-number" id="special-headline">Loeffler +1.2</h2>
-                            <h3 class="prediction-margin" id="special-margin">&#177;3</h3>
+                            <h2 class="prediction-number">
+                                <div class="ph-item">
+                                    <div class="ph-col-12">
+                                        <div class="ph-row">
+                                            <div class="ph-col-12 big"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </h2>
+                            <h2 class="prediction-number" id="special-headline">
+                                <noscript>Enable Javascript to view results</noscript>
+                            </h2>
+                            <h3 class="prediction-margin">
+                                <div class="ph-item">
+                                    <div class="ph-col-12">
+                                        <div class="ph-row">
+                                            <div class="ph-col-4 empty"></div>
+                                            <div class="ph-col-4"></div>
+                                            <div class="ph-col-4 empty"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </h3>
+                            <h3 class="prediction-margin" id="special-margin">
+                            </h3>
                             <p class="prediction-title">Georgia Special Election Findings</p>
                         </div>
                     </div>
@@ -177,8 +232,7 @@ layout: default
         <div class="row justify-content-center">
             <div class="col-auto">
                 <a class="button button-primary"
-                   href="">
-                    <!--todo link-->
+                   href="/responses_processed.csv">
                     Download the complete findings</a>
             </div>
         </div>

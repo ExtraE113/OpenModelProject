@@ -1,6 +1,3 @@
-function ready() {
-
-}
 
 function updateSliderFeedback(){
     let elements = document.getElementsByClassName("auto-output")
@@ -10,5 +7,3 @@ function updateSliderFeedback(){
         element.innerText = inputElement.value;
     }
 }
-
-document.addEventListener("DOMContentLoaded", ready, false)
