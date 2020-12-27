@@ -11,7 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.3.2] - 2020-12-24
+## [1.3.3] - 2020-12-27
+### Changed  
+Changed previous update date in CHANGELOG to reflect reality  
+Minor language tweak for the inhouse poll
+
+## [1.3.2] - 2020-12-26
 ### Changed
 Minor update to use much faster api
 
