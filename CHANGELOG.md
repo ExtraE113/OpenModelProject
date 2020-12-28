@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.4.0] - 2020-12-26
 ### Added preview subdomain 
 
+## [1.3.4] - 2020-12-27
+### Changed
+Uses production API endpoint
+
 ## [1.3.3] - 2020-12-27
 ### Changed  
 Changed previous update date in CHANGELOG to reflect reality  
