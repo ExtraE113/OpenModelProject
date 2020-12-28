@@ -11,9 +11,11 @@ bodyClass: page
 
 This poll was sponsored by American Civics Exchange. (ACE) on behalf of the Open Model Project. ACE is a US-based developer of political prediction markets and related forecasting products, services and content. ACE is not funded by any candidate or political party committee and does not poll on behalf of any political candidate or party.
 
+The poll sampled 1405 Georgians and was adjusted to match a Georgia representative likely voter electorate by weighing on race, age, gender, education, income, region, 2016 Presidential vote, and 2020 Presidential vote. The raw margin of error is +/-4.7 points with 95% confidence.
+
 <h3 id="topline-ossoff-perdue"> Ossoff vs. Perdue (Perdue +3.9) </h3>
 
-A national poll of likely voters and found that **David Perdue (R) has a +3.9 point lead over Jon Ossoff (D) - a strong lead, but within the margin of error.** The poll sampled 1405 Georgians and was adjusted to match a Georgia representative likely voter electorate by weighing on race, age, gender, education, income, region, 2016 Presidential vote, and 2020 Presidential vote. The raw margin of error is +/-4.7 points with 95% confidence.
+A national poll of likely voters and found that **David Perdue (R) has a +3.9 point lead over Jon Ossoff (D) - a strong lead, but within the margin of error** (+/- 4.7)**.**
 
 The poll found Perdue has 49.5% support and Ossoff has 45.6% support among likely voters, with 4.9% remaining undecided.
 
@@ -21,7 +23,7 @@ Using this polling data alone and historical information about polling accuracy,
 
 <h3 id="topline-results-warnock-loeffler"> Warnock vs. Loeffler (Loeffler +4.1) </h3>
 
-A national poll of likely voters and found that **Kelly Loeffler (R) has a +4.1 point lead over Raphael Warnock (D) - a strong lead, but within the margin of error.** The poll found Loeffler has 50.3% support and Warnock has 46.2% support among likely voters, with 3.5% remaining undecided.
+A national poll of likely voters and found that **Kelly Loeffler (R) has a +4.1 point lead over Raphael Warnock (D) - a strong lead, but within the margin of error** (+/- 4.7)**.** The poll found Loeffler has 50.3% support and Warnock has 46.2% support among likely voters, with 3.5% remaining undecided.
 
 Using this polling data alone and historical information about polling accuracy, but no other information, we naively expect an 80% chance that Perdue&#39;s actual margin on election day will be between -1.4 and +9.8.
 
@@ -67,7 +69,7 @@ This poll was designed on Surveymonkey. The survey was 35 questions long and too
 
 <h3 id="survey-deployment">Survey Deployment</h3>
 
-This poll was a combination of online surveying of 405 participants using [Prolific](https://www.prolific.co/) - an online platform where people are recruited and paid to complete surveys - and 1000 participants using [Wick](https://www.wick.io/) - an online platform that allows for interactive voice response (IVR) to landline polling. Both platforms are non-political and non-partisan. The combination was chosen to cheaply attract
+This poll was a combination of online surveying of 1405 participants using [Prolific](https://www.prolific.co/) - an online platform where people are recruited and paid to complete surveys - and 1000 participants using [Wick](https://www.wick.io/) - an online platform that allows for interactive voice response (IVR) to landline polling. Both platforms are non-political and non-partisan. The combination was chosen to cheaply recruit participants while maintaining high accuracy, as online surveys oversample younger voters and IVR oversamples older voters, allowing for a good combination when joined together.
 
 The online survey was live from 21 December to 27 December. The IVR survey was live on 23 December. The poll was open for so long due to difficulty recruiting participants during the holiday season. This may have also introduced bias and error into the polling.
 
@@ -91,7 +93,7 @@ To create a view of what will happen on election day, it is important to only sa
 
 Our likely voter model is based on the Perry-Gallup index outlined in [Pew 2016](https://www.pewresearch.org/methods/2016/01/07/measuring-the-likelihood-to-vote/):
 
-- Respondents were given 1 point for saying they were &quot;Very likely&quot; to vote, 0.7 points for saying they were &quot;Likely&quot; to vote, 0.4 points for saying they were &quot;Neither likely nor unlikely&quot; to vote, and 0.1 points for saying they were &quot;Somewhat unlikely&quot; to vote. Respondents were also given 0.7 points if they said they already voted, so as to not overweigh people who already voted (given that these people tend to skew Democratic).
+- Respondents were given 1 point for saying they were &quot;Very likely&quot; to vote, 0.7 points for saying they were &quot;Likely&quot; to vote, 0.4 points for saying they were &quot;Neither likely nor unlikely&quot; to vote, and 0.1 points for saying they were &quot;Somewhat unlikely&quot; to vote. Respondents were also given 0.7 points if they said they already voted, so as to not overly weight people who already voted (given that these people tend to skew Democratic).
 - Respondents were given 0.5 points for saying they voted in 2020.
 - This produces a scale from 0.1 to 2.
 - Scores were mapped to probabilities of voting by transforming the decimal score to a whole number score from 0-7 by multiplying by 3.5 and rounding to the nearest whole number. These scores were then mapped `0 -> 0.11, 1 -> 0.13, 2 -> 0.23, 3 -> 0.34, 4 -> 0.4, 5 -> 0.59, 6 -> 0.63, 7 -> 0.83`.
