@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.0] - 2020-12-28
+### Changed
+/polling-method is now /ga-poll-runoff-method
+
 ## [1.4.9] - 2020-12-28
 ### Changed
 copy fixes  
