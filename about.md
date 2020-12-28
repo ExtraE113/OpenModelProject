@@ -18,11 +18,11 @@ While we use polls as a key input, our ever evolving, transparent, crowd-driven 
 
 In addition to polling data, we may draw on economic and public health fundamentals, prediction market pricing, early/mail voting patterns, new voter registration data, fundraising activity, social media influence, and so on.
 
-And we're focused on building tools that enable people with zero coding skills to make their own tweaks, apply their own assumptions, and test the model's logic and sensitivites. And when you find something that doesn't make sense, we ask you to help us improve it.
+And we're focused on building tools that enable people with zero coding skills to make their own tweaks, apply their own assumptions, and test the model's logic and sensitivities. And when you find something that doesn't make sense, we ask you to help us improve it.
 
 ## Prototype: Georgia
 
-We're using the twin Georgia Senate runoff elections on January 5th as a proof of concept. We've built the kernel of the model, some [vizualization and interaction tools](https://www.openmodelproject.org/) for you to play with, and given you some forums to debate and collaborate what works and what doesn't.
+We're using the twin Georgia Senate runoff elections on January 5th as a proof of concept. We've built the kernel of the model, some [visualization and interaction tools](https://www.openmodelproject.org/) for you to play with, and given you some forums to debate and collaborate what works and what doesn't.
 
 And to better facilitate the Georgia prototype, we've also commissioned our own poll of Georgia voters, which we've published with the same focus on transparency and interactivity. Every poll makes use of (sometimes subjective) weights to normalize the demographic or ideological composition of the respondents. Pollsters often make additional judgments about the likelihood of their respondents to actually vote- another opportunity to enhance the accuracy of the poll, but another opportunity for subjectivity to unduly influence the results.
 
