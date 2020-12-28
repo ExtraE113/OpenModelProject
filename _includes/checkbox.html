@@ -1,0 +1,10 @@
+<div class="form-check {{ include.parentClasses }}">
+    <label class="form-check-label" for="{{ include.id }}">
+        <input class="form-check-input {{ include.classes }}" type="checkbox" value="" id="{{ include.id }}"
+               {% if include.checked != false %}
+                checked
+                {% endif %}
+        >
+        {{ include.text }}
+    </label>
+</div>

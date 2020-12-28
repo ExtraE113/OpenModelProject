@@ -1,0 +1,76 @@
+<h2><a data-toggle="collapse" href="#qc">Quality control</a></h2>
+                        <div class="collapse" id="qc">
+                            <p>Online surveys do not always produce accurate information - sometimes participants could
+                                be deliberately dishonest or otherwise low quality to the extent where it is best to
+                                remove them when conducting with analysis.</p>
+                            <!--<editor-fold desc="honestySliders">-->
+                            {%
+                            include slider.html title="Somewhat honest penalty" text="After they completed the rest
+                            of the survey, we asked users how honest they'd
+                            been. We then discount users who admit to only being somewhat honest. A penalty
+                            of 100 means we exclude them completely, while a penalty of zero means we treat
+                            them as if they'd answered \"Very Honestly\" or \"Completely Honestly\"" defaultValue="100"
+                            id="somewhathonest"
+                            %}
+                            <!---->
+                            <!---->
+                            <!---->
+                            {%
+                            include slider.html title="Not at all honest penalty" text="This is the same as above but
+                            for users who said they'd been \"not at all honest\"" defaultValue="100" id="nothonest"
+                            %}
+                            <!--</editor-fold>-->
+
+                            {% include checkbox.html id="excludeIncorrect" text="Exclude users who failed an attention
+                            check" %}
+
+                        </div>
+
+
+
+
+<h4><h4><a data-toggle="collapse" href="#thinkingCollection">Thinking about the election</a>
+                            </h4></h4>
+                            <div class="collapse" id="thinkingCollection">
+                                {% include slider.html text="said they were thinking about the election \"Quite a lot\""
+                                id="thinkingALot" min="0" max="2" defaultValue="1" step="0.001" %}
+
+
+                                {% include slider.html text="said they were thinking about the election \"some\""
+                                id="some" min="0" max="2" defaultValue="0.7" step="0.001" %}
+
+
+                                {% include slider.html text="said they were thinking about the election \"only a
+                                little\""
+                                id="thinkingLittle" min="0" max="2" defaultValue="0" step="0.001" %}
+                            </div>
+
+
+
+<h4><h4><a data-toggle="collapse" href="#historyCollection">Voted in the past</a></h4></h4>
+                            <div class="collapse" id="historyCollection">
+                                {% include slider.html text="said they voted in 2016 or weren't old enough to vote in
+                                2016"
+                                id="voted2016" min="0" max="2" defaultValue="1" step="0.001" %}
+                            </div>
+                            <h4><h4><a data-toggle="collapse" href="#votePrep">Voting preparations</a></h4></h4>
+                            <div class="collapse" id="votePrep">
+                                {% include slider.html text="said they plan to vote in person or have already received
+                                their mail-in ballot." id="voteInPersonOrReceived" min="0" max="2" defaultValue="1"
+                                step="0.001" %}
+
+                                {% include slider.html text="said they have requested but not received their mail-in
+                                ballot." id="requestedNotReceived" min="0" max="2" defaultValue="0.8" step="0.001" %}
+
+                                {% include slider.html text="said they have not yet requested their mail-in ballot."
+                                id="notRequested" min="0" max="2" defaultValue="0.4" step="0.001" %}
+                            </div>
+
+<h4>Give voters who already voted max points</h4>
+                            {% include checkbox.html id="alreadyVoted" text="Override above and give voters maximum
+                            points if they already voted? (Highly
+                            recommended)" %}
+                            <h4>Give voters who aren't registered 0 points</h4>
+                            {% include checkbox.html id="notRegistered" text="Override above and give voters 0
+                            points if they aren't registered? (Highly
+                            recommended)"%}
