@@ -3,7 +3,7 @@ title: "Flip Pidot"
 date: 2020-12-21
 draft: false
 image: "https://oldbull.tv/wp-content/uploads/2020/06/flip-1.png"
-jobtitle: "Model Builder"
+jobtitle: "Project Lead"
 weight: 1
 layout: team
 promoted: true
