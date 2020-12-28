@@ -74,7 +74,7 @@ function getUpdatedValues() {
             handleResponse(old_response)
         } else {
             old_body = body;
-            postData("https://3by6vmq2zf.execute-api.us-east-1.amazonaws.com/dev/users/create",
+            postData("https://i8mdraho5k.execute-api.us-east-1.amazonaws.com/prod4/inhousepolls/weight\n",
                 body).then(handleResponse).catch()
         }
 
