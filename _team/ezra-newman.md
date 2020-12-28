@@ -2,7 +2,7 @@
 title: "Ezra Newman"
 date: 2020-12-21
 draft: false
-image: "https://avatars0.githubusercontent.com/u/33768950?s=460&v=4"
+image: "/images/team/IMG_8878-3.jpg"
 jobtitle: "Developer"
 weight: 9
 layout: team
