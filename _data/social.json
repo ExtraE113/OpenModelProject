@@ -8,5 +8,10 @@
     "name": "Discord",
     "link": "https://discord.gg/HrnsJZ5baM",
     "image": "images/social/discord.svg"
+  },
+  {
+    "name": "Twitter",
+    "link": "https://twitter.com/openmodelproj",
+    "image": "images/social/twitter.svg"
   }
 ]

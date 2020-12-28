@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.7] - 2020-12-28
+### Changed
+Replaced call box with contact form  
+Changed copyright text  
+Added twitter info  
+Added patreon info  
+
 ## [1.4.6] - 2020-12-28
 ### Changed
 Formatting tweak on features page

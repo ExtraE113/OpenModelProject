@@ -1,19 +1,18 @@
 <div class="call">
-  <div class="call-box-top">
-    {% if site.data.contact.phone %}
-        <div class="call-phone"><strong>Phone: </strong> {{ site.data.contact.phone }} </div>
-    {% endif %}
-    {% if site.data.contact.email %}
-    <div class="call-email"><strong>Email: </strong>
-      <a href="mailto:{{ .site.Data.contact.email }}">
-        {{ site.data.contact.email }}
-      </a>
+    <div class="call-box-top">
+        <form name="mailing-list" method="POST" data-netlify="true" id="mailing">
+            <div class="form-group">
+
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                       placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+            </div>
+        </form>
     </div>
-    {% endif %}
-  </div>
     {% if include.show_button %}
-      <div class="call-box-bottom">
-        <a href="{{ site.data.contact.contact_button_link }}" class="button">Contact</a>
-      </div>
+    <div class="call-box-bottom">
+        <a class="button" href="javascript:{}" onclick="document.getElementById('mailing').submit();">Join our mailing list </a>
+    </div>
     {% endif %}
 </div>
