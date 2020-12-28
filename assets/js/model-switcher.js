@@ -6,24 +6,24 @@ function handleChange() {
 
     let scenario = (covid ? "c" : "x") + (avg.includes("imple") ? "s" : "w") + (market ? "p" : "x") + (prior ? "e" : "x")
 
-    let data = {
-        "xsxx": [23, 27, 42],
-        "csxx": [14, 18, 28],
-        "xwxx": [35, 41, 46],
-        "cwxx": [20, 25, 29],
-        "xspx": [24, 28, 41],
-        "cspx": [17, 19, 29],
-        "xwpx": [34, 40, 45],
-        "cwpx": [22, 26, 29],
-        "xsxe": [26, 30, 42],
-        "csxe": [21, 25, 35],
-        "xwxe": [31, 37, 43],
-        "cwxe": [24, 29, 35],
-        "xspe": [26, 31, 41],
-        "cspe": [23, 26, 35],
-        "xwpe": [31, 36, 43],
-        "cwpe": [25, 30, 35]
-    }
+    let data = {	
+        "xsxx": [25, 30, 43],
+        "csxx": [19, 23, 35],
+        "xwxx": [30, 35, 44],
+        "cwxx": [22, 27, 35],
+        "xspx": [26, 30, 42],
+        "cspx": [22, 25, 35],
+        "xwpx": [30, 35, 44],
+        "cwpx": [24, 28, 35],
+        "xsxe": [27, 31, 42],
+        "csxe": [24, 28, 38],
+        "xwxe": [29, 34, 43],
+        "cwxe": [25, 30, 38],
+        "xspe": [28, 32, 41],
+        "cspe": [25, 29, 38],
+        "xwpe": [29, 34, 42],
+        "cwpe": [26, 31, 38]
+    }	
 
     let [dsenate, ossoff, warnock] = data[scenario];
 
