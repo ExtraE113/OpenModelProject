@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.3] - 2020-12-28
+### Changed  
+Changed methodology sections
+
 ## [1.4.2] - 2020-12-27
 ### Added
 Fixed typo that caused warnock always to have a 0% chance  
