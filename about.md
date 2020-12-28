@@ -20,7 +20,7 @@ In addition to polling data, we may draw on economic and public health fundament
 
 And we're focused on building tools that enable people with zero coding skills to make their own tweaks, apply their own assumptions, and test the model's logic and sensitivities. And when you find something that doesn't make sense, we ask you to help us improve it.
 
-## Prototype: Georgia
+## Our Peachy Prototype
 
 We're using the twin Georgia Senate runoff elections on January 5th as a proof of concept. We've built the kernel of the model, some [visualization and interaction tools](https://www.openmodelproject.org/) for you to play with, and given you some forums to debate and collaborate what works and what doesn't.
 
