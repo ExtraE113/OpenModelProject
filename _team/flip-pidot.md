@@ -9,7 +9,7 @@ layout: team
 promoted: true
 ---
 
-Flip is the host of [Old Bull TV](https://oldbull.tv) and the founder and CEO of [American Civics Exchange](http://amciv.com/), a developer of politically-themed financial products and markets.
+Flip is the founder and CEO of [American Civics Exchange](http://amciv.com/) (ACE), the corporate sponsor of the Open Model Project and a developer of political marketplaces.
 
 From its inception in 2014 through 2019, Flip was also market curator for the popular prediction market [PredictIt](https://predictit.org).
 
