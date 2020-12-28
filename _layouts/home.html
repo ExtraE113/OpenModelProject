@@ -91,6 +91,8 @@ bodyClass: page-home
                                 </h2>
                                 <p class="prediction-title">{{ prediction.content | markdownify | strip_html | truncate: 100
                                     }}</p>
+                                <p class="prediction-mov" id="{{prediction.title}}-mov">
+                                </p>
                             </div>
                         </div>
                     </div>
