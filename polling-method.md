@@ -57,6 +57,8 @@ Report by **Peter Hurford**
 
 **[Appendix 2: Experimental Weights](#exp-weights)**
 
+**[Appendix 3: Question List](#question-list)**
+
 <h1 id="methods">Methods</h1>
 
 <h3 id="survey-design">Survey Design</h3>
@@ -112,4 +114,346 @@ We value transparency and invite scrutiny of its methods. Our data is available 
 
 <h1 id="exp-weights">Apendix 2: Experimental Weights</h1>
 
-We further attempted to experiment with novel weights not used by other pollsters, such as weighing on social trust, socioeconomic attitudes, and religious attitudes as measured by the [General Social Survey](https://gss.norc.org/), correcting for polling&#39;s tendency to oversample atheists and people with high social trust. We also weighed by Facebook usage, correcting for polls tending to oversample online voters. The use of these experimental weights did not materially change the results. For more information, see [https://openmodelproject.org/](https://openmodelproject.org/)
+We further attempted to experiment with novel weights not used by other pollsters, such as weighing on social trust, socioeconomic attitudes, and religious attitudes as measured by the [General Social Survey](https://gss.norc.org/), correcting for polling&#39;s tendency to oversample atheists and people with high social trust. We also weighed by Facebook usage, correcting for polls tending to oversample online voters.
+
+The use of these experimental weights did not materially change the results -- Loeffler leads by 4.5 instead of 4.1 and Perdue leads by 3.8 instead of 4.0. These experimental results still remain within the margin of error and the differences between the experimental weights and traditional weights are not statistically significant.
+
+The code for the expiermental weights is [available publicly on GitHub](https://github.com/peterhurford/ga_sen_runoff_polling) under an MIT license. For more information, see [https://openmodelproject.org/](https://openmodelproject.org/).
+
+<h1 id="question-list">Apendix 3: Question List</h1>
+
+**Page 1 [Likely Voter Screen 1]**
+
+Q1. What is your Prolific ID? _(skipped on IVR)_
+*   _[open response - respondent fill in]_
+
+Q2. There are two runoff elections on January 5th that determine control of the Senate. How much thought have you given to these races? _(skipped on IVR)_
+
+*   Quite a lot
+*   Some
+*   Only a little
+
+Q3. Are you eligible to vote in the 2021 Georgia runoff election?
+
+*   Yes
+*   No _(respondents who answered this are dropped from the dataset)_
+*   Don’t know _(respondents who answered this are dropped from the dataset)_
+
+Q4. Are you registered to vote in the 2021 Georgia runoff election?
+
+*   Yes
+*   No _(respondents who answered this are dropped from the dataset)_
+*   Don’t know _(respondents who answered this are dropped from the dataset)_
+
+Q5. Do you plan to vote in the 2021 Georgia runoff election?
+
+*   Yes
+*   No _(respondents who answered this are dropped from the dataset)_
+*   Don’t know _(respondents who answered this are dropped from the dataset)_
+
+Q6. Have you already voted in the 2021 Georgia runoff election?
+
+*   Yes
+*   No
+*   Don’t know
+
+**Page 2 [Likely Voter Screen 2A]**
+
+_(Skip page if plan to vote Q5 is No, registered to vote Q4 is No, or eligible to vote Q3 is No)_
+
+_(Skip page if already voted Q6 is Yes)_
+
+Q7. How are you planning to vote?
+
+*   In person before election day
+*   In person on election day
+*   By mail, and I’ve already requested and received my mail-in ballot
+*   By mail, and I’ve already requested my mail-in ballot
+*   By mail, but I haven’t requested my mail-in ballot yet
+*   Other
+*   Don’t know
+
+Q8. How likely are you to vote?
+
+*   Very likely
+*   Somewhat likely
+*   Neither likely nor unlikely
+*   Somewhat unlikely
+*   Very unlikely
+
+Q9. Compared to previous elections, are you more enthusiastic than usual about voting, or less enthusiastic?
+
+*   More enthusiastic
+*   Less enthusiastic
+
+**Page 3 [Likely Voter Screen 2B]**
+
+_(Skip page if plan to vote Q5 is No, registered to vote Q4 is No, or eligible to vote Q3 is No)_
+
+_(Skip page if already voted Q6 is not Yes)_
+
+Q10. How did you vote?
+
+*   In person early voting
+*   By mail
+*   Other
+*   Don’t know
+
+**Page 4 [Vote Choice 1]**
+
+Q11. In the 2016 Presidential election, who did you vote for?
+
+*   Hillary Clinton, the Democrat
+*   Donald Trump, the Republican
+*   Gary Johnson, the Libertarian
+*   Jill Stein, the Green Party
+*   Another candidate
+*   Did not vote
+
+**Page 5 [Vote Choice 2]**
+
+Q12. In the 2020 Presidential election, who did you vote for?
+
+*   Joe Biden, the Democrat
+*   Donald Trump, the Republican
+*   Another candidate
+*   Did not vote
+
+**Page 6 [Vote Choice 3A]**
+
+_(Skip page if already voted Q6 is Yes)_
+
+Q13. In the 2021 January Georgia regular election, who do you intend to vote for?
+
+*   David Perdue, the Republican
+*   Jon Ossoff, the Democrat
+*   Another candidate
+*   Do not intend to vote
+*   Not decided
+
+Q14. In the 2021 January Georgia special election, who do you intend to vote for?
+
+*   Kelly Loeffler, the Republican
+*   Raphael Warnock, the Democrat
+*   Another candidate
+*   Do not intend to vote
+*   Not decided
+
+**Page 7 [Vote Choice 3B]**
+
+_(Skip page if already voted Q6 is not Yes)_
+
+Q15. In the 2021 January Georgia regular election, who did you vote for?
+
+*   David Perdue, the Republican
+*   Jon Ossoff, the Democrat
+*   Another candidate
+*   Did not vote
+*   Don’t remember
+
+Q16. In the 2021 January Georgia special election, who did you vote for?
+
+*   Kelly Loeffler, the Republican
+*   Raphael Warnock, the Democrat
+*   Another candidate
+*   Did not vote
+*   Don’t remember
+
+**Page 8 [Vote Choice 3C]**
+
+_(Skip page if already voted Q6 is No and plan to vote Q5 is not No. Skipped also on IVR)_
+
+Q17. Which of these reasons explains why you are not voting in the 2021 January Georgia runoff elections? Please check all that apply. 
+
+*   I’m not eligible to vote
+*   I’m not interested in voting
+*   I don’t have enough time to vote
+*   I don’t feel like I know enough to vote
+*   I don’t like any of the candidates
+*   The voting process is rigged
+*   I am intentionally boycotting the runoff election
+*   Another reason
+
+**Page 9 [Fraud]**
+
+Q18. If all legal votes were fairly counted, who do you think actually won the 2020 Presidential election in the state of Georgia?
+
+*   Joe Biden
+*   Donald Trump
+*   Don’t know / Not sure
+
+Q19. Do you trust the 2021 Georgia runoff election to accurately count your vote?
+
+*   Definitely Yes
+*   Probably Yes
+*   Probably No
+*   Definitely No
+*   Don’t know / not sure 
+
+Q20. Should Donald Trump concede and admit that he lost the 2020 Presidential election?
+
+*   Yes
+*   No
+*   Don’t know / not sure
+
+**Page 10 [Demographics 1]**
+
+Q21. Generally speaking, would you say that most people can be trusted or that you can't be too careful in dealing with people?
+
+*   Most people can be trusted
+*   You can’t be too careful
+*   Don’t know
+
+Q22. Which of these statements comes closest to describing your feelings about the Bible?
+
+*   The Bible is the actual word of God and it is to be taken literally, word for word
+*   The Bible is the inspired word of God but not everything should be taken literally, word for word
+*   The Bible is an ancient book of fables, legends, history, and moral precepts recorded by man
+*   I don’t know
+
+Q23. How much do you agree or disagree with the following? “It is sometimes necessary to discipline a child with a good, hard spanking.”
+
+*   Don’t know
+*   Strongly agree
+*   Agree
+*   Neither agree nor disagree
+*   Disagree
+*   Strongly disagree
+
+Q24. How much do you agree or disagree with the following? “Birth control is morally wrong.”  _(Skipped on IVR)_
+
+*   Don’t know
+*   Strongly agree
+*   Agree
+*   Neither agree nor disagree
+*   Disagree
+*   Strongly disagree
+
+**Page 11 [Demographics 2]**
+
+Q25. Have you ever tested positive for COVID?  _(Skipped on IVR)_
+
+*   Yes
+*   No
+*   Don’t know
+
+Q26. Do you know anyone who has died because of COVID? _(Skipped on IVR)_
+
+*   Yes
+*   No
+*   Don’t know
+
+Q27. Have you or your family had trouble paying bills or rent because of COVID?
+
+*   Yes
+*   No
+*   Don’t know
+
+Q28. Have you or anyone in your family lost their job or reduced their work hours due to COVID?  _(Skipped on IVR)_
+
+*   Yes
+*   No
+*   Don’t know
+
+**Page 12 [Demographics 3]**
+
+Q29. Which of these social media networks do you use? (check all that apply)
+
+_[randomize answers, except for the last one]_
+
+*   Facebook
+*   Twitter
+*   Instagram
+*   TikTok
+*   Pinterest
+*   Yapyap _[fake answer to check if people are distracted and/or lying]_
+*   None of the above
+
+**Page 13 [Demographics 4]**
+
+Q30. What is your gender?
+*   Male
+*   Female
+*   Other
+
+Q31. In which year were you born? Please write your answer as 4 digits only
+*   _[open response - respondent fill in]_
+
+Q32. What is your race?
+
+*   White or Caucasian
+*   Black or African American
+*   Hispanic or Latino
+*   Asian or Asian American
+*   American Indian or Alaska Native
+*   Native Hawaiian or other Pacific Islander
+*   Another race
+
+Q33. What is the highest level of education you have completed?
+
+*   Did not attend school
+*   1st grade
+*   2nd grade
+*   3rd grade
+*   4th grade
+*   5th grade
+*   6th grade
+*   7th grade
+*   8th grade
+*   9th grade
+*   10th grade
+*   11th grade
+*   Graduated from high school
+*   1 year of college
+*   2 years of college
+*   3 years of college
+*   Graduated from college
+*   Some graduate school
+*   Completed graduate school
+
+Q34. What is your annual income?
+
+*   Under $15,000
+*   Between $15,000 and $29,999
+*   Between $30,000 and $49,999
+*   Between $50,000 and $74,999
+*   Between $75,000 and $99,999
+*   Between $100,000 and $150,000
+*   Over $150,000
+
+
+**Page 14 [Demographics 5]**
+
+Q35. Which of these counties do you live in?
+
+*   Fulton County, GA
+*   Gwinnett County, GA
+*   Cobb County, GA
+*   DeKalb County, GA
+*   Another county
+
+Q36. Would you say you live closer to Florida or closer to Tennessee?
+
+*   Closer to Florida
+*   Closer to Tennessee
+
+Q37. Would you say you live closer to Alabama or closer to South Carolina?
+
+*   Closer to Alabama
+*   Closer to South Carolina
+
+Q38. Which of the following best describes the area in which you live?
+
+*   Urban
+*   Suburban
+*   Rural
+
+
+**Page 15 [Demographics 6]**
+
+Q39. How honestly have you answered these questions? People depend on the honesty of your answers - if you admit to being dishonest, you will still be paid.
+
+*   Not honestly at all _(respondents who picked this were dropped from the dataset)_
+*   Somewhat honestly _(respondents who picked this were dropped from the dataset)_
+*   Very honestly
+*   Completely honestly
