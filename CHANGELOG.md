@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.5] - 2020-12-28
+### Changed
+Many copy fixes
+
 ## [1.4.4] - 2020-12-28
 ### Changed
 Changed language RE: polling date and sample size
