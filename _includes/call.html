@@ -1,3 +1,31 @@
+<script>
+
+    const serializeForm = function (formData) {
+        let obj = {};
+        for (let key of formData.keys()) {
+            obj[key] = formData.get(key);
+        }
+        return obj;
+    };
+
+
+
+    const handleSubmit = ()=> {
+        let myForm = document.getElementById('mailing');
+        let formData = new FormData(myForm)
+        let body = JSON.stringify(serializeForm(formData))
+        console.log(body)
+        // fetch('/', {
+        //     method: 'POST',
+        //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        //     body: new URLSearchParams(formData).toString()
+        // }).then(() => console.log('Form successfully submitted')).catch((error) =>
+        //     alert(error))
+    }
+
+</script>
+
+
 <div class="call">
     <div class="call-box-top">
         <form name="mailing-list" method="POST" data-netlify="true" id="mailing">
@@ -12,27 +40,10 @@
     </div>
     {% if include.show_button %}
     <div class="call-box-bottom">
-        <a class="button" href="javascript:{}" onclick="document.getElementById('mailing').submit();">Join our mailing list </a>
+<!--        <a class="button" href="javascript:{}" onclick="handleSubmit();">Join our mailing list </a>-->
+
+                <button class="button" type="submit">Join our mailing list </button>
+
     </div>
     {% endif %}
 </div>
-
-<script>
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        let myForm = document.getElementById('mailing');
-        let formData = new FormData(myForm)
-        let body = new URLSearchParams(formData.toString())
-        console.log(body)
-        // fetch('/', {
-        //     method: 'POST',
-        //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        //     body: new URLSearchParams(formData).toString()
-        // }).then(() => console.log('Form successfully submitted')).catch((error) =>
-        //     alert(error))
-    }
-
-    document.querySelector("#mailing").addEventListener("submit", handleSubmit);
-
-
-</script>
