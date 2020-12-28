@@ -1,5 +1,5 @@
 ---
-title: 'About OPM'
+title: 'About OMP'
 date: 2020-12-21T12:15:34-08:00
 layout: page
 bodyClass: page-about
@@ -12,7 +12,7 @@ And we're inviting you to help us make it better.
 
 We don't pretend to have a recipe for the perfect election forecast. But we do recognize that the current state of the art is sorely lacking.
 
-The opaque, overly poll-credulous professional models (with ever shifting standards of self-evaluation) have fooled us twice in a row, so shame on us. OPM is the antithesis to the centralized, black box approach to forecasting.
+The opaque, overly poll-credulous professional models (with ever shifting standards of self-evaluation) have fooled us twice in a row, so shame on us. OMP is the antithesis to the centralized, black box approach to forecasting.
 
 While we use polls as a key input, our ever evolving, transparent, crowd-driven approach favors a mosaic approach, drawing on predictive insights wherever we may find them, in hopes of triangulating more reliable, less rigid probabalistic forecasts.
 
