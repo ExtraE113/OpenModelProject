@@ -19,7 +19,7 @@ The poll found Perdue has 49.5% support and Ossoff has 45.6% support among likel
 
 Using this polling data alone and historical information about polling accuracy, but no other information, we naively expect an 80% chance that Perdue&#39;s actual margin on election day will be between -2.0 and +9.8.
 
-<h3 id="topline-results-warnock-loeffler"> Warnock vs. Loeffler (Loeffler +4.1) </h3>
+<h3 id="topline-warnock-loeffler"> Warnock vs. Loeffler (Loeffler +4.1) </h3>
 
 A national poll of likely voters and found that **Kelly Loeffler (R) has a +4.1 point lead over Raphael Warnock (D) - a strong lead, but within the margin of error.** The poll found Loeffler has 50.3% support and Warnock has 46.2% support among likely voters, with 3.5% remaining undecided.
 
