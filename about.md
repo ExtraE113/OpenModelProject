@@ -4,8 +4,6 @@ date: 2020-12-21T12:15:34-08:00
 layout: page
 bodyClass: page-about
 ---
-
-# Welcome to OPM
 The Open Model Project is an initiative of [American Civics Exchange](https://amciv.com), aiming to bring crowd-based wisdom to traditional election modeling.
 
 We've adopted a radically transparent and messily iterative approach to election modeling, giving everyone free and open access to the model and encouraging you to spin the dials, pull the levers, and see how it actually works.
