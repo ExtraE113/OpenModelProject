@@ -30,7 +30,7 @@ function handleChange() {
 
     document.getElementById("dsenate").innerText = Math.round(dsenate * 100) + "%";
     document.getElementById("ossoff").innerText = Math.round(ossoff * 100) + "%";
-    document.getElementById("warnock").innerText = Math.round(warnock) * 100 + "%";
+    document.getElementById("warnock").innerText = Math.round(warnock * 100) + "%";
 
     document.getElementById("ossoff-mov").innerText = ossoff_margin;
     document.getElementById("warnock-mov").innerText = warnock_margin;
