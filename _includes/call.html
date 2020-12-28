@@ -18,8 +18,6 @@
 </div>
 
 <script>
-    document.querySelector("#mailing").addEventListener("submit", handleSubmit);
-
     const handleSubmit = (e) => {
         e.preventDefault()
         let myForm = document.getElementById('mailing');
@@ -33,4 +31,8 @@
         // }).then(() => console.log('Form successfully submitted')).catch((error) =>
         //     alert(error))
     }
+
+    document.querySelector("#mailing").addEventListener("submit", handleSubmit);
+
+
 </script>
