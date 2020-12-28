@@ -14,7 +14,7 @@ We don't pretend to have a recipe for the perfect election forecast. But we do r
 
 The opaque, overly poll-credulous professional models (with ever shifting standards of self-evaluation) have fooled us twice in a row, so shame on us. OMP is the antithesis to the centralized, black box approach to forecasting.
 
-While we use polls as a key input, our ever evolving, transparent, crowd-driven approach favors a mosaic approach, drawing on predictive insights wherever we may find them, in hopes of triangulating more reliable, less rigid probabilistic forecasts.
+While we use polls as a key input, our ever evolving, transparent, crowd-driven framework favors a mosaic approach, drawing on predictive insights wherever we may find them, in hopes of triangulating more reliable, less rigid probabilistic forecasts.
 
 In addition to polling data, we may draw on economic and public health fundamentals, prediction market pricing, early/mail voting patterns, new voter registration data, fundraising activity, social media influence, and so on.
 
