@@ -29,3 +29,5 @@ And to better facilitate the Georgia prototype, we've also commissioned our own 
 Our [interactive poll explorer](https://www.openmodelproject.org/inhouse/) not only links you straight to the raw data, but offers you user-friendly ways to change any and all of the demographic weights and likely voter screening factors.
 
 Once you've had a chance to check it out, we hope you'll [join the conversation](https://discord.gg/HrnsJZ5baM) - whether as a collaborator, a lurker, or a leader of the Open Model Project.
+```
+Note: OMP is an initiative of American Civics Exchange and is not a non-profit organization.
