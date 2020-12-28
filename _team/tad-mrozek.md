@@ -2,7 +2,7 @@
 title: "Tad Mrozek"  
 date: 2020-12-21  
 draft: false  
-image:   
+image: "/images/team/tad3.png"  
 jobtitle: "Poll analyst"  
 weight: 10  
 layout: team  
