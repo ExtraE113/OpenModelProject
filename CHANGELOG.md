@@ -10,9 +10,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [1.4.1] - 2020-12-27
+### Added
+MOV shows up
+Latest model changes
+Minor tweaks to get everything playing nice
+
 
 ## [1.4.0] - 2020-12-26
-### Added preview subdomain 
+### Added  
+preview subdomain 
+
+## [1.3.4] - 2020-12-27
+### Changed
+Uses production API endpoint
 
 ## [1.3.3] - 2020-12-27
 ### Changed  
