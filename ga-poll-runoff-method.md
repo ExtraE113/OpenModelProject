@@ -13,9 +13,9 @@ This poll was sponsored by American Civics Exchange. (ACE) on behalf of the Open
 
 The poll sampled 1405 Georgians and was adjusted to match a Georgia representative likely voter electorate by weighing on race, age, gender, education, income, region, 2016 Presidential vote, and 2020 Presidential vote. The raw margin of error is +/-4.7 points with 95% confidence.
 
-<h3 id="topline-ossoff-perdue"> Ossoff vs. Perdue (Perdue +3.9) </h3>
+<h3 id="topline-ossoff-perdue"> Ossoff vs. Perdue (Perdue +4.0) </h3>
 
-A national poll of likely voters and found that **David Perdue (R) has a +3.9 point lead over Jon Ossoff (D) - a strong lead, but within the margin of error** (+/- 4.7)**.**
+A national poll of likely voters and found that **David Perdue (R) has a +4.0 point lead over Jon Ossoff (D) - a strong lead, but within the margin of error** (+/- 4.7)**.**
 
 The poll found Perdue has 49.5% support and Ossoff has 45.6% support among likely voters, with 4.9% remaining undecided.
 
