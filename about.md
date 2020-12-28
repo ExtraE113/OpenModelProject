@@ -24,10 +24,10 @@ And we're focused on building tools that enable people with zero coding skills t
 
 ## Prototype: Georgia
 
-We're using the twin Georgia Senate runoff elections on January 5th as proof of concept. We've built the kernel of the model, some vizualization and interaction tools for you to play with, and given you some forums to debate and collaborate what works and what doesn't.
+We're using the twin Georgia Senate runoff elections on January 5th as a proof of concept. We've built the kernel of the model, some [vizualization and interaction tools](https://www.openmodelproject.org/) for you to play with, and given you some forums to debate and collaborate what works and what doesn't.
 
 And to better facilitate the Georgia prototype, we've also commissioned our own poll of Georgia voters, which we've published with the same focus on transparency and interactivity. Every poll makes use of (sometimes subjective) weights to normalize the demographic or ideological composition of the respondents. Pollsters often make additional judgments about the likelihood of their respondents to actually vote- another opportunity to enhance the accuracy of the poll, but another opportunity for subjectivity to unduly influence the results.
 
-Our interactive poll results not only link you straight to the raw data, but offer you user-friendly ways to change any and all of the demographic weights and likely voter screening factors.
+Our [interactive poll explorer](https://www.openmodelproject.org/inhouse/) not only links you straight to the raw data, but offers you user-friendly ways to change any and all of the demographic weights and likely voter screening factors.
 
 Once you've had a chance to check it out, we hope you'll [join the conversation](https://discord.gg/HrnsJZ5baM) - whether as a collaborator, a lurker, or a leader of the Open Model Project.
