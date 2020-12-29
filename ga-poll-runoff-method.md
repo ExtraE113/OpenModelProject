@@ -1,10 +1,10 @@
 ---
-title: 'Polling Report'  
+title: 'Georgia Senate Runoff Polling Report'  
 date: 2020-12-28  
 layout: page  
 bodyClass: page
 ---
-
+* You can adjust the likely voter screen and demographic weights (even apply experimental weights) in our [Poll Explorer](/inhouse).
 <h1 id="topline-results">Topline Results </h1>
 
 [Open Model Project](https://openmodelproject.org/) produced a poll of the 2020 Georgia Senate runoff elections. **This polling has Perdue and Loeffler both up by 4.**
