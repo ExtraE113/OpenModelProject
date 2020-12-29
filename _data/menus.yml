@@ -1,4 +1,7 @@
 main:
+  - name: "Our Forecast"
+    url: "/#prediction-statics"
+    weight: 0
   - name: "Our Polls"
     url: "/inhouse/"
     weight: 1
@@ -19,18 +22,25 @@ main:
     weight: 6
 
 footer:
-  - name: "Home"
-    url: "/"
-    weight: 1
-  - name: "About"
-    url: "/about/"
-    weight: 2
+  - name: "Our Forecast"
+    url: "/#prediction-statics"
+    weight: 0
   - name: "Our Polls"
     url: "/inhouse/"
+    weight: 1
+  - name: "Features"
+    url: "/features/"
+    weight: 2
+  - name: "Team"
+    url: "/team/"
     weight: 3
+  - name: "About"
+    url: "/about/"
+    weight: 4
   - name: "Contact"
     url: "/contact/"
-    weight: 4
+    weight: 5
   - name: "Patreon"
     url: "https://www.patreon.com/openmodel"
     weight: 6
+

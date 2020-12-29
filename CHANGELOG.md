@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.3] - 2020-12-28
+### Changed
+header and footer
+
 ## [1.5.2] - 2020-12-28
 ### Changed
 updated memeo  
