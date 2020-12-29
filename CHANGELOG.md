@@ -11,6 +11,48 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.2] - 2020-12-28
+### Changed
+updated memeo  
+
+## [1.5.1] - 2020-12-28
+### Changed
+experimental factors disabled by default
+
+
+## [1.5.0] - 2020-12-28
+### Changed
+/polling-method is now /ga-poll-runoff-method
+
+## [1.4.9] - 2020-12-28
+### Changed
+copy fixes  
+
+## [1.4.8] - 2020-12-28
+### Changed
+fix form problem with netlify  
+added image for tad  
+changed image for ezra  
+
+## [1.4.7] - 2020-12-28
+### Changed
+Replaced call box with contact form  
+Changed copyright text  
+Added twitter info  
+Added patreon info  
+
+## [1.4.6] - 2020-12-28
+### Changed
+Formatting tweak on features page
+
+## [1.4.5] - 2020-12-28
+### Changed
+Many copy fixes
+
+## [1.4.4] - 2020-12-28
+### Changed
+Changed language RE: polling date and sample size
+
 ## [1.4.3] - 2020-12-28
 ### Changed  
 Changed methodology sections
