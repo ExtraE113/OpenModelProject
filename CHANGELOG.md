@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.4] - 2020-12-28
+### Changed
+To prevent div by 0 errors on the backend set the minimum slider value to 0.01
+
 ## [1.5.3] - 2020-12-28
 ### Changed
 header and footer
