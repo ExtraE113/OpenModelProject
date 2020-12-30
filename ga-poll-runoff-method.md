@@ -69,7 +69,9 @@ This poll was designed on Surveymonkey. The survey was 35 questions long and too
 
 <h3 id="survey-deployment">Survey Deployment</h3>
 
-This poll was a combination of online surveying of 1405 participants using [Prolific](https://www.prolific.co/) - an online platform where people are recruited and paid to complete surveys - and 1000 participants using [Wick](https://www.wick.io/) - an online platform that allows for interactive voice response (IVR) to landline polling. Both platforms are non-political and non-partisan. The combination was chosen to cheaply recruit participants while maintaining high accuracy, as online surveys oversample younger voters and IVR oversamples older voters, allowing for a good combination when joined together.
+This poll was a combination of online surveying of 512 participants using [Prolific](https://www.prolific.co/) - an online platform where people are recruited and paid to complete surveys - and 1000 participants using [Wick](https://www.wick.io/) - an online platform that allows for interactive voice response (IVR) to landline polling. Both platforms are non-political and non-partisan. The combination was chosen to cheaply recruit participants while maintaining high accuracy, as online surveys oversample younger voters and IVR oversamples older voters, allowing for a good combination when joined together.
+
+107 particiants from the Prolific sample were dropped because they were either (a) ineligible to vote, (b) not registered to vote, (c) self-reported that they were definitely not planning to vote, (d) indicated they were not answering questions honestly, and/or (e) indicated they did not live in Georgia. 0 particiants from the IVR sample were removed, as the data vendor (Wick) already terminated IVR calls with people who were not registered to vote. The total sample therefore has 1405 responses.
 
 The online survey was live from 21 December to 27 December. The IVR survey was live on 23 December. The poll was open for so long due to difficulty recruiting participants during the holiday season. This may have also introduced bias and error into the polling.
 
