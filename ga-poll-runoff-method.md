@@ -61,6 +61,9 @@ Report by **Peter Hurford**
 
 **[Appendix 3: Question List](#question-list)**
 
+**[Appendix 4: Changelog](#changelog)**
+
+
 <h1 id="methods">Methods</h1>
 
 <h3 id="survey-design">Survey Design</h3>
@@ -461,3 +464,12 @@ Q39. How honestly have you answered these questions? People depend on the honest
 *   Somewhat honestly _(respondents who picked this were dropped from the dataset)_
 *   Very honestly
 *   Completely honestly
+
+<h1 id="changelog">Apendix 4: Changelog</h1>
+
+The raw data of the poll won't change, but our methods might as we grow and learn, and this could change results. This is an open community project, so we want to be pro-changes.
+
+Here is a list of changes we have made to the methodology over time:
+
+* **GA Poll v1.0.1 (29 Dec)** - Updated our explanation for how we combined the online survey and IVR polling and explained participants being dropped. Corrected a typo. This does not change the methodology, only better clarifies it.
+* **GA Poll v1.0.0 (28 Dec)** - Original launch
