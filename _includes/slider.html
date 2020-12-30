@@ -3,7 +3,7 @@
         <h3>{{ include.title }}</h3>
         <p>{{ include.text }} (default: {{ include.defaultValue }})</p>
     </label>
-    <input type="range" class="form-control-range" id="{{ include.id }}" min="{{ include.min | default: 0 }}"
+    <input type="range" class="form-control-range" id="{{ include.id }}" min="{{ include.min | default: 0.01 }}"
            max="{{ include.max | default: 100 }}"
            value="{{ include.defaultValue }}"
            { %if include.step }
