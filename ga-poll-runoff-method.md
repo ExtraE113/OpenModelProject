@@ -61,6 +61,9 @@ Report by **Peter Hurford**
 
 **[Appendix 3: Question List](#question-list)**
 
+**[Appendix 4: Changelog](#changelog)**
+
+
 <h1 id="methods">Methods</h1>
 
 <h3 id="survey-design">Survey Design</h3>
@@ -69,7 +72,9 @@ This poll was designed on Surveymonkey. The survey was 35 questions long and too
 
 <h3 id="survey-deployment">Survey Deployment</h3>
 
-This poll was a combination of online surveying of 1405 participants using [Prolific](https://www.prolific.co/) - an online platform where people are recruited and paid to complete surveys - and 1000 participants using [Wick](https://www.wick.io/) - an online platform that allows for interactive voice response (IVR) to landline polling. Both platforms are non-political and non-partisan. The combination was chosen to cheaply recruit participants while maintaining high accuracy, as online surveys oversample younger voters and IVR oversamples older voters, allowing for a good combination when joined together.
+This poll was a combination of online surveying of 512 participants using [Prolific](https://www.prolific.co/) - an online platform where people are recruited and paid to complete surveys - and 1000 participants using [Wick](https://www.wick.io/) - an online platform that allows for interactive voice response (IVR) to landline polling. Both platforms are non-political and non-partisan. The combination was chosen to cheaply recruit participants while maintaining high accuracy, as online surveys oversample younger voters and IVR oversamples older voters, allowing for a good combination when joined together.
+
+107 particiants from the Prolific sample were dropped because they were either (a) ineligible to vote, (b) not registered to vote, (c) self-reported that they were definitely not planning to vote, (d) indicated they were not answering questions honestly, and/or (e) indicated they did not live in Georgia. 0 particiants from the IVR sample were removed, as the data vendor (Wick) already terminated IVR calls with people who were not registered to vote. The total sample therefore has 1405 responses.
 
 The online survey was live from 21 December to 27 December. The IVR survey was live on 23 December. The poll was open for so long due to difficulty recruiting participants during the holiday season. This may have also introduced bias and error into the polling.
 
@@ -459,3 +464,12 @@ Q39. How honestly have you answered these questions? People depend on the honest
 *   Somewhat honestly _(respondents who picked this were dropped from the dataset)_
 *   Very honestly
 *   Completely honestly
+
+<h1 id="changelog">Apendix 4: Changelog</h1>
+
+The raw data of the poll won't change, but our methods might as we grow and learn, and this could change results. This is an open community project, so we want to be pro-changes.
+
+Here is a list of changes we have made to the methodology over time:
+
+* **GA Poll v1.0.1 (29 Dec)** - Updated our explanation for how we combined the online survey and IVR polling and explained participants being dropped. Corrected a typo. This does not change the methodology, only better clarifies it.
+* **GA Poll v1.0.0 (28 Dec)** - Original launch
