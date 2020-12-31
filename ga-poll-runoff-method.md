@@ -25,7 +25,7 @@ Using this polling data alone and historical information about polling accuracy,
 
 A national poll of likely voters and found that **Kelly Loeffler (R) has a +4.1 point lead over Raphael Warnock (D) - a strong lead, but within the margin of error** (+/- 4.7)**.** The poll found Loeffler has 50.3% support and Warnock has 46.2% support among likely voters, with 3.5% remaining undecided.
 
-Using this polling data alone and historical information about polling accuracy, but no other information, we naively expect an 80% chance that Perdue&#39;s actual margin on election day will be between -1.4 and +9.8.
+Using this polling data alone and historical information about polling accuracy, but no other information, we naively expect an 80% chance that Loeffler&#39;s actual margin on election day will be between -1.4 and +9.8.
 
 <h1 id="ga-senate-runoff-poll"> GA Senate Runoff Poll </h1>
 
