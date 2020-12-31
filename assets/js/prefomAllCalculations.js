@@ -48,7 +48,7 @@ function getUpdatedValues() {
         let weigh_on_code = ""
 
         for (let i = 0; i < weigh_on_key.length; i++) {
-            if (weigh_on.includes(weigh_on_key[i])){
+            if (weigh_on.includes(weigh_on_key[i])) {
                 weigh_on_code += "1"
             } else {
                 weigh_on_code += "0"
@@ -65,16 +65,17 @@ function getUpdatedValues() {
             "somewhat unlikely": parseFloat(document.getElementById("somewhatUnlikely").value),
             "unlikely": parseFloat(document.getElementById("unlikely").value),
             "2020 voted": parseFloat(document.getElementById("turnout2020").value),
-            "weigh_on_code": weigh_on_code
+            "weigh_on_code": weigh_on_code,
+            "exits": document.getElementById("exits").checked ? "True" : "False"
         }
 
 
-        if (JSON.stringify(old_body) === JSON.stringify(body) ) {
+        if (JSON.stringify(old_body) === JSON.stringify(body)) {
             console.log("here")
             handleResponse(old_response)
         } else {
             old_body = body;
-            postData("https://i8mdraho5k.execute-api.us-east-1.amazonaws.com/prod4/inhousepolls/weight\n",
+            postData("https://0azvedxiw3.execute-api.us-east-1.amazonaws.com/dev/inhousepolls/weight",
                 body).then(handleResponse).catch()
         }
 
