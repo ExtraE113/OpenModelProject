@@ -55,13 +55,15 @@ Report by **Peter Hurford**
 
 <a class="pl-3" href="#electoral-modeling">Electoral Modeling</a>
 
-**[Appendix 1: Code and Website](#code-website)**
+**[Appendix 1: Crosstabs](#crosstabs)**
 
 **[Appendix 2: Experimental Weights](#exp-weights)**
 
 **[Appendix 3: Question List](#question-list)**
 
-**[Appendix 4: Changelog](#changelog)**
+**[Appendix 4: Code and Website](#code-website)**
+
+**[Appendix 5: Changelog](#changelog)**
 
 
 <h1 id="methods">Methods</h1>
@@ -115,9 +117,56 @@ We allocate undecideds evenly between the two candidates, with some uncertainty 
 
 The final NMCIs were constructed with an additional 4pts of margin to account for historical accuracy of Senate polling within three weeks of the election (see [Silver 2020](https://fivethirtyeight.com/features/the-polls-werent-great-but-thats-pretty-normal/)).
 
-<h1 id="code-website">Apendix 1: Code and Website</h1>
+<h1 id="crosstabs">Apendix 1: Crosstabs</h1>
 
-We value transparency and invite scrutiny of its methods. Our data is available interactively at [https://openmodelproject.org/inhouse](https://openmodelproject.org/inhouse). The code and data for all our data quality filtering, demographic weighting, likely voter weighting, and electoral modeling is [available publicly on GitHub](https://github.com/peterhurford/ga_sen_runoff_polling) under an MIT license.
+_Unweighted Demographics (Before Weighting or Likely Voter Model)_
+
+These are the unadjusted raw demographics of our poll. They obviously do not match the expected electorate, so we weigh them to an expected electorate based on Census data to fix this:
+
+*   44.7% Male, 54.0% Female
+*   68.1% non-Hispanic white, 21.6% Black, 1.8% Hispanic, 8.5% other
+*   48.7% college, 51.3% noncollege
+*   55.6% Biden, 40.5% Trump
+
+
+_Weighted Demographics (Before Likely Voter Model))_
+
+These are the demographics we use for our poll results, before applying a likely voter model:
+
+*   48.2% Male, 51.1% Female
+*   52.0% non-Hispanic white, 32.6% Black, 9.9% Hispanic, 5.5% other
+*   27.4% college, 72.6% noncollege
+*   48.7% Biden, 48.5% Trump
+
+
+_Weighted Demographics, After Likely Voter Model_
+
+These are the final demographics we use for our poll results. These are the demographics we expect to see in the actual election results:
+
+*   49.3% Male, 50.1% Female
+*   53.0% non-Hispanic white, 32.6% Black, 9.1% Hispanic, 5.3% other
+*   26.5% college, 73.5% noncollege
+*   45.8% Biden, 52.2% Trump
+
+
+_Vote Method_
+
+*   35.3% Absentee by mail
+    *   62% Ossoff / Warnock
+    *   34% Perdue / Loeffler
+*   45.7% Early vote in person
+    *   50% Perdue / Loeffler
+    *   45% Ossoff / Warnock
+*   18.9% vote on election day
+    *   78% Perdue / Loeffler
+    *   18% Ossoff / Warnock
+
+Keep in mind that the raw margin error of the entire poll is +/-4, and the margin of error is much higher for individual crosstabs.
+
+These crosstabs show that our poll overweighs Hispanics, due to using Georgia census data. However, using [2020 general election exit poll data](https://www.foxnews.com/elections/2020/general-results/voter-analysis?race=S&state=GA) as census weights does not change our toplines. Users can interactively explore how weighting choices and the choice of census affects the topline at [https://www.openmodelproject.org/inhouse/](https://www.openmodelproject.org/inhouse/).
+
+Full crosstabs and more detail are available [here](https://github.com/peterhurford/ga_sen_runoff_polling/blob/master/GA%20Senate%20Runoff%20-%20Crosstabs.ipynb). The raw data (so you can apply any crosstabs you want) and the crosstab code are [available publicly on GitHub](https://github.com/peterhurford/ga_sen_runoff_polling) under an MIT license. For more information, see [https://openmodelproject.org/](https://openmodelproject.org/).
+
 
 <h1 id="exp-weights">Apendix 2: Experimental Weights</h1>
 
@@ -125,7 +174,40 @@ We further attempted to experiment with novel weights not used by other pollster
 
 The use of these experimental weights did not materially change the results -- Loeffler leads by 4.5 instead of 4.1 and Perdue leads by 3.8 instead of 4.0. These experimental results still remain within the margin of error and the differences between the experimental weights and traditional weights are not statistically significant.
 
+_Experimental Weighted Demographics (Before Likely Voter Model))_
+
+These are the demographics using experimental weights, before applying a likely voter model:
+
+*   48.3% Male, 51.0% Female
+*   52.0% non-Hispanic white, 32.6% Black, 9.9% Hispanic, 5.5% other
+*   27.4% college, 72.6% noncollege
+*   48.7% Biden, 48.4% Trump
+
+
+_Experimental Weighted Demographics, After Likely Voter Model_
+
+These are the final demographics we use for our poll results. These are the demographics we expect to see in the actual election results:
+
+*   49.8% Male, 49.6% Female
+*   53.1% non-Hispanic white, 32.1% Black, 9.3% Hispanic, 5.5% other
+*   26.7% college, 73.3% noncollege
+*   45.6% Biden, 52.3% Trump
+
+
+_Vote Method (using Expiermental Weights)_
+
+*   33.7% Absentee by mail
+    *   62% Ossoff / Warnock
+    *   34% Perdue / Loeffler
+*   47.5% Early vote in person
+    *   50% Perdue / Loeffler
+    *   46% Ossoff / Warnock
+*   18.9% vote on election day
+    *   79% Perdue / Loeffler
+    *   16% Ossoff / Warnock
+
 The code for the expiermental weights is [available publicly on GitHub](https://github.com/peterhurford/ga_sen_runoff_polling) under an MIT license. For more information, see [https://openmodelproject.org/](https://openmodelproject.org/).
+
 
 <h1 id="question-list">Apendix 3: Question List</h1>
 
@@ -465,11 +547,18 @@ Q39. How honestly have you answered these questions? People depend on the honest
 *   Very honestly
 *   Completely honestly
 
-<h1 id="changelog">Apendix 4: Changelog</h1>
+
+<h1 id="code-website">Apendix 4: Code and Website</h1>
+
+We value transparency and invite scrutiny of its methods. Our data is available interactively at [https://openmodelproject.org/inhouse](https://openmodelproject.org/inhouse). The code and data for all our data quality filtering, demographic weighting, likely voter weighting, and electoral modeling is [available publicly on GitHub](https://github.com/peterhurford/ga_sen_runoff_polling) under an MIT license.
+
+
+<h1 id="changelog">Apendix 5: Changelog</h1>
 
 The raw data of the poll won't change, but our methods might as we grow and learn, and this could change results. This is an open community project, so we want to be pro-changes.
 
 Here is a list of changes we have made to the methodology over time:
 
+* **GA Poll v1.0.2 (1 Jan)** - Added an appendix on crosstabs.
 * **GA Poll v1.0.1 (29 Dec)** - Updated our explanation for how we combined the online survey and IVR polling and explained participants being dropped. Corrected a typo. This does not change the methodology, only better clarifies it.
 * **GA Poll v1.0.0 (28 Dec)** - Original launch
