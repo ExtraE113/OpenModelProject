@@ -43,9 +43,20 @@ layout: default
                                 results, but it also has the effect of making the margin of error larger. Using US
                                 Census data and voting history, we can get a rough sense of the proportions of gender,
                                 race, age, and political/voting history we would expect to see in our sample.</p>
+                            <p>We can either weight data based off of the most recent census (the default) or <a
+                                    href="https://www.foxnews.com/elections/2020/general-results/voter-analysis?race=S&state=GA">exit
+                                polling.</a></p>
 
-                            {% include checkbox.html id="census-overall" text="Weight data based off the
-                            census. (Traditional weights)" classes="option census-data"%}
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="exits">
+                                <label class="custom-control-label" for="exits">Use 2020 exit poll data
+                                    instead of census data.</label>
+                            </div>
+
+                            <br>
+
+                            {% include checkbox.html id="census-overall" text="Weight data based off demographics.
+                            (Traditional weights)" classes="option census-data"%}
 
 
                             {% include checkbox.html id="gender" text="Gender"
