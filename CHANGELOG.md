@@ -10,6 +10,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.6.1] - 2020-12-31
+### Added
+Added last updated (in JS, because that's where we go to update the stats)
+
 ## [1.6.0] - 2020-12-31
 ### Added
 Add option to weight by exit poll data (2020) instead of by census

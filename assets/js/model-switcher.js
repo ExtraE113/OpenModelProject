@@ -25,6 +25,8 @@ function handleChange() {
         "cwpe": [0.33, 0.36, "Ossoff margin: -1.3 (80% CI: -5.3 to 2.7)", 0.42, "Warnock margin: -0.7 (80% CI: -4.8 to 3.3)"]
     }
 
+    let last_updated = "2020-12-31"
+
     let [dsenate, ossoff, ossoff_margin, warnock, warnock_margin] = data[scenario];
 
 
@@ -34,6 +36,8 @@ function handleChange() {
 
     document.getElementById("ossoff-mov").innerText = ossoff_margin;
     document.getElementById("warnock-mov").innerText = warnock_margin;
+
+    document.getElementById("last-updated").innerText = "Last updated " + last_updated
 
 }
 
