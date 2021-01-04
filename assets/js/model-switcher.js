@@ -7,25 +7,25 @@ function handleChange() {
     let scenario = (covid ? "c" : "x") + (avg.includes("imple") ? "s" : "w") + (market ? "p" : "x") + (prior ? "e" : "x")
 
     let data = {
-        "xsxx": [0.49, 0.51, "Ossoff margin: 0.1 (80% CI: -3.9 to 4)", 0.6, "Warnock margin: 0.9 (80% CI: -3.1 to 4.8)"],
-        "csxx": [0.36, 0.38, "Ossoff margin: -1 (80% CI: -4.9 to 2.9)", 0.47, "Warnock margin: -0.2 (80% CI: -4.1 to 3.7)"],
-        "xwxx": [0.64, 0.69, "Ossoff margin: 1.6 (80% CI: -2.3 to 5.5)", 0.7, "Warnock margin: 1.8 (80% CI: -2.2 to 5.7)"],
-        "cwxx": [0.49, 0.54, "Ossoff margin: 0.3 (80% CI: -3.6 to 4.2)", 0.56, "Warnock margin: 0.5 (80% CI: -3.5 to 4.4)"],
-        "xspx": [0.49, 0.52, "Ossoff margin: 0.1 (80% CI: -3.9 to 4)", 0.6, "Warnock margin: 0.9 (80% CI: -3.1 to 4.8)"],
-        "cspx": [0.39, 0.4, "Ossoff margin: -1 (80% CI: -4.9 to 2.9)", 0.49, "Warnock margin: -0.2 (80% CI: -4.1 to 3.7)"],
-        "xwpx": [0.61, 0.68, "Ossoff margin: 1.6 (80% CI: -2.3 to 5.5)", 0.69, "Warnock margin: 1.8 (80% CI: -2.2 to 5.7)"],
-        "cwpx": [0.49, 0.55, "Ossoff margin: 0.3 (80% CI: -3.6 to 4.2)", 0.56, "Warnock margin: 0.5 (80% CI: -3.5 to 4.4)"],
-        "xsxe": [0.38, 0.39, "Ossoff margin: -0.9 (80% CI: -4.8 to 3)", 0.5, "Warnock margin: 0 (80% CI: -3.9 to 3.9)"],
-        "csxe": [0.32, 0.33, "Ossoff margin: -1.4 (80% CI: -5.3 to 2.5)", 0.43, "Warnock margin: -0.6 (80% CI: -4.5 to 3.4)"],
-        "xwxe": [0.46, 0.49, "Ossoff margin: -0.1 (80% CI: -4 to 3.8)", 0.55, "Warnock margin: 0.4 (80% CI: -3.5 to 4.3)"],
-        "cwxe": [0.38, 0.41, "Ossoff margin: -0.7 (80% CI: -4.7 to 3.2)", 0.47, "Warnock margin: -0.2 (80% CI: -4.1 to 3.7)"],
-        "xspe": [0.41, 0.42, "Ossoff margin: -0.9 (80% CI: -4.8 to 3)", 0.51, "Warnock margin: 0 (80% CI: -3.9 to 3.9)"],
-        "cspe": [0.36, 0.36, "Ossoff margin: -1.4 (80% CI: -5.3 to 2.5)", 0.45, "Warnock margin: -0.6 (80% CI: -4.5 to 3.4)"],
-        "xwpe": [0.47, 0.5, "Ossoff margin: -0.1 (80% CI: -4 to 3.8)", 0.56, "Warnock margin: 0.4 (80% CI: -3.5 to 4.3)"],
-        "cwpe": [0.4, 0.43, "Ossoff margin: -0.7 (80% CI: -4.7 to 3.2)", 0.49, "Warnock margin: -0.2 (80% CI: -4.1 to 3.7)"],
+        "xsxx": [0.49, 0.51, "Ossoff margin: 0.1 (80% CI: -3.9 to 4)", 0.6, "Warnock margin: 0.8 (80% CI: -3.1 to 4.7)"],
+        "csxx": [0.36, 0.37, "Ossoff margin: -1 (80% CI: -5 to 2.9)", 0.47, "Warnock margin: -0.3 (80% CI: -4.2 to 3.6)"],
+        "xwxx": [0.63, 0.68, "Ossoff margin: 1.5 (80% CI: -2.4 to 5.5)", 0.69, "Warnock margin: 1.7 (80% CI: -2.2 to 5.6)"],
+        "cwxx": [0.47, 0.53, "Ossoff margin: 0.2 (80% CI: -3.7 to 4.1)", 0.54, "Warnock margin: 0.4 (80% CI: -3.6 to 4.3)"],
+        "xspx": [0.49, 0.52, "Ossoff margin: 0.1 (80% CI: -3.9 to 4)", 0.6, "Warnock margin: 0.8 (80% CI: -3.1 to 4.7)"],
+        "cspx": [0.39, 0.4, "Ossoff margin: -1 (80% CI: -5 to 2.9)", 0.48, "Warnock margin: -0.3 (80% CI: -4.2 to 3.6)"],
+        "xwpx": [0.61, 0.67, "Ossoff margin: 1.5 (80% CI: -2.4 to 5.5)", 0.68, "Warnock margin: 1.7 (80% CI: -2.2 to 5.6)"],
+        "cwpx": [0.48, 0.53, "Ossoff margin: 0.2 (80% CI: -3.7 to 4.1)", 0.55, "Warnock margin: 0.4 (80% CI: -3.6 to 4.3)"],
+        "xsxe": [0.38, 0.39, "Ossoff margin: -0.9 (80% CI: -4.8 to 3)", 0.5, "Warnock margin: 0 (80% CI: -4 to 3.9)"],
+        "csxe": [0.32, 0.33, "Ossoff margin: -1.4 (80% CI: -5.3 to 2.5)", 0.43, "Warnock margin: -0.6 (80% CI: -4.5 to 3.3)"],
+        "xwxe": [0.45, 0.48, "Ossoff margin: -0.1 (80% CI: -4 to 3.8)", 0.55, "Warnock margin: 0.4 (80% CI: -3.5 to 4.3)"],
+        "cwxe": [0.37, 0.4, "Ossoff margin: -0.8 (80% CI: -4.7 to 3.1)", 0.47, "Warnock margin: -0.3 (80% CI: -4.2 to 3.6)"],
+        "xspe": [0.4, 0.41, "Ossoff margin: -0.9 (80% CI: -4.8 to 3)", 0.51, "Warnock margin: 0 (80% CI: -4 to 3.9)"],
+        "cspe": [0.35, 0.36, "Ossoff margin: -1.4 (80% CI: -5.3 to 2.5)", 0.45, "Warnock margin: -0.6 (80% CI: -4.5 to 3.3)"],
+        "xwpe": [0.46, 0.5, "Ossoff margin: -0.1 (80% CI: -4 to 3.8)", 0.55, "Warnock margin: 0.4 (80% CI: -3.5 to 4.3)"],
+        "cwpe": [0.4, 0.42, "Ossoff margin: -0.8 (80% CI: -4.7 to 3.1)", 0.48, "Warnock margin: -0.3 (80% CI: -4.2 to 3.6)"]
     }
 
-    let last_updated = "2021-01-04"
+    let last_updated = "2021-01-04 4:30PM ET"
 
     let [dsenate, ossoff, ossoff_margin, warnock, warnock_margin] = data[scenario];
 
