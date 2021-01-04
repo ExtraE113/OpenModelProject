@@ -22,7 +22,7 @@ function handleChange() {
         "xspe": [0.41, 0.42, "Ossoff margin: -0.9 (80% CI: -4.8 to 3)", 0.51, "Warnock margin: 0 (80% CI: -3.9 to 3.9)"],
         "cspe": [0.36, 0.36, "Ossoff margin: -1.4 (80% CI: -5.3 to 2.5)", 0.45, "Warnock margin: -0.6 (80% CI: -4.5 to 3.4)"],
         "xwpe": [0.47, 0.5, "Ossoff margin: -0.1 (80% CI: -4 to 3.8)", 0.56, "Warnock margin: 0.4 (80% CI: -3.5 to 4.3)"],
-        "cwpe": [0.4, 0.43, "Ossoff margin: -0.7 (80% CI: -4.7 to 3.2)", 0.49, "Warnock margin: -0.2 (80% CI: -4.1 to 3.7)"]],
+        "cwpe": [0.4, 0.43, "Ossoff margin: -0.7 (80% CI: -4.7 to 3.2)", 0.49, "Warnock margin: -0.2 (80% CI: -4.1 to 3.7)"],
     }
 
     let last_updated = "2021-01-04"
