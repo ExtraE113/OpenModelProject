@@ -25,7 +25,7 @@ function handleChange() {
         "cwpe": [0.4, 0.43, "Ossoff margin: -0.7 (80% CI: -4.7 to 3.2)", 0.49, "Warnock margin: -0.2 (80% CI: -4.1 to 3.7)"]],
     }
 
-    let last_updated = "2021-01-04 12PM ET"
+    let last_updated = "2021-01-04"
 
     let [dsenate, ossoff, ossoff_margin, warnock, warnock_margin] = data[scenario];
 
