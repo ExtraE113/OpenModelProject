@@ -27,13 +27,36 @@ bodyClass: page-home
 
 <div class="strip">
     <div class="container pt-6 pb-3 pb-md-5">
-        <div class="row justify-content-start align-items-center">
-            <div class="col">
-                <h2>We conducted a poll of 1405 Georgia residents</h2>
-                <p><a href="/ga-poll-runoff-method">Read our methodology here.</a> View all the results and change the assumptions.</p>
+        <div class="row justify-content-center">
+            <div class="col border-right mb-4 mb-md-0" style="border-width: 3px !important;">
+                <table style="height: 100%">
+                    <tr>
+                        <td><h2>We conducted a poll of 1405 Georgia residents</h2></td>
+                    </tr>
+                    <tr style="vertical-align: top">
+                        <td><p><a href="/ga-poll-runoff-method">Read our methodology here.</a> View all the results and
+                            change the
+                            assumptions.</p></td>
+                    </tr>
+                    <tr style="vertical-align:bottom">
+                        <td><a class="button button-primary" href="/inhouse">View All Results and Change Assumptions</a>
+                        </td>
+                    </tr>
+                </table>
             </div>
-            <div class="col-auto">
-                <a class="button button-primary" href="/inhouse">View All Results and Change Assumptions</a>
+
+            <div class="col">
+                <table style="height: 100%">
+                    <tr>
+                        <td><h2>We Have A Podcast!</h2></td>
+                    </tr>
+                    <tr>
+                        <td><p>The Open Model Project podcast is available now on your favorite podcasting app.</p></td>
+                    </tr>
+                    <tr style="vertical-align:bottom">
+                        <td><a class="button button-primary" href="https://openmodel.podbean.com/">Get it now</a></td>
+                    </tr>
+                </table>
             </div>
         </div>
 
@@ -56,7 +79,9 @@ bodyClass: page-home
         <div class="row justify-content-start align-items-center">
             <div class="col">
                 <h1>Our model: accessible, flexible and open source</h1>
-                <p>See how the Georgia Senate runoff forecast changes in real-time when you adjust the assumptions and <a href="Modeling the Georgia Senate Runoff Elections - Model Methodology.pdf"> read our methodology</a>.</p>
+                <p>See how the Georgia Senate runoff forecast changes in real-time when you adjust the assumptions and
+                    <a href="Modeling the Georgia Senate Runoff Elections - Model Methodology.pdf"> read our
+                        methodology</a>.</p>
                 <p><i id="last-updated"></i></p>
             </div>
         </div>
@@ -124,7 +149,8 @@ bodyClass: page-home
                                 <h2 class="prediction-number" id="{{prediction.title}}">
                                     {{ prediction.data }}
                                 </h2>
-                                <p class="prediction-title">{{ prediction.content | markdownify | strip_html | truncate: 100
+                                <p class="prediction-title">{{ prediction.content | markdownify | strip_html | truncate:
+                                    100
                                     }}</p>
                                 <p class="prediction-mov" id="{{prediction.title}}-mov">
                                 </p>
@@ -149,8 +175,6 @@ bodyClass: page-home
         </div>
     </div>
 </div>
-
-
 
 
 <div class="strip">
