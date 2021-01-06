@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.8.0] - 2021-1-05
+### Added
+Added preliminary postmortem  
+### Changed
+Home page now links to that ^^^  
+Model now shows actual MOV  
+
 ## [1.7.1] - 2021-1-05
 ### Changed
 Decreased top padding  
