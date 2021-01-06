@@ -3,7 +3,6 @@ title: Open Model Project
 layout: default
 bodyClass: page-home
 ---
-<script src="assets/js/model-switcher.js"></script>
 
 <div class="intro">
     <div class="container">
@@ -28,24 +27,8 @@ bodyClass: page-home
 <div class="strip">
     <div class="container pt-6 pb-3 pb-md-5">
         <div class="row justify-content-center">
-            <div class="col border-right mb-4 mb-md-0" style="border-width: 3px !important;">
-                <table style="height: 100%">
-                    <tr>
-                        <td><h2>We conducted a poll of 1405 Georgia residents</h2></td>
-                    </tr>
-                    <tr style="vertical-align: top">
-                        <td><p><a href="/ga-poll-runoff-method">Read our methodology here.</a> View all the results and
-                            change the
-                            assumptions.</p></td>
-                    </tr>
-                    <tr style="vertical-align:bottom">
-                        <td><a class="button button-primary" href="/inhouse">View All Results and Change Assumptions</a>
-                        </td>
-                    </tr>
-                </table>
-            </div>
 
-            <div class="col">
+            <div class="col" id="podcast">
                 <table style="height: 100%">
                     <tr>
                         <td><h2>We Have A Podcast!</h2></td>
@@ -92,107 +75,27 @@ bodyClass: page-home
 
 
 <div class="strip" id="prediction-statics">
-    <div class="container pt-3 pb-3 pb-md-5">
+    <div class="container pt-3 pb-2">
         <div class="row justify-content-start align-items-center">
             <div class="col">
-                <h1>Our model: accessible, flexible and open source</h1>
-                <p>See how the Georgia Senate runoff forecast changes in real-time when you adjust the assumptions and
-                    <a href="Modeling the Georgia Senate Runoff Elections - Model Methodology.pdf"> read our
-                        methodology</a>.</p>
-                <p><i id="last-updated"></i></p>
-            </div>
-        </div>
-        <div class="row align-items-center">
-            <div class="col">
-                <h1>
-                    <noscript>Enable Javascript change inputs!</noscript>
-                </h1>
-                <form>
-                    <h3><i>Tweak the model assumptions...</i></h3>
-                    <div class="form-check">
-                        <input class="form-check-input model-switcher" type="checkbox" value="" id="covid">
-                        <label class="form-check-label" for="covid">
-                            Include COVID-19 Adjustment
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input model-switcher" type="checkbox" value='' id="market" checked>
-                        <label class="form-check-label" for="market">
-                            Include prediction markets
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input model-switcher" type="checkbox" value='' id="prior" checked>
-                        <label class="form-check-label" for="prior">
-                            Include the election as a prior
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label for="average">Use...</label>
-                        <select class="form-control model-switcher" id="average">
-                            <option>Weighted Average</option>
-                            <option>Simple Average</option>
-                        </select>
-                    </div>
-                </form>
-            </div>
-
-            <div class="col">
-                {% assign pred = site.predictions | sort: 'weight' %}
-                {% for prediction in pred %}
-                {% if prediction.featured %}
-                <div class="row justify-content-center">
-                    <div class="col prediction prediction-summary">
-                        <div class="prediction-content">
-                            <h1 class="prediction-number" id="{{prediction.title}}">
-                                {{ prediction.data }}
-                            </h1>
-                            <h2 class="prediction-title">
-                                {{ prediction.content | markdownify | strip_html | truncate: 100 }}
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-                {% endif %}
-                {% endfor %}
-
-
-                <div class="row justify-content-start">
-                    {% for prediction in pred %}
-                    {% if prediction.featured == nil %}
-                    <div class="col">
-                        <div class="prediction prediction-summary">
-                            <div class="prediction-content">
-                                <h2 class="prediction-number" id="{{prediction.title}}">
-                                    {{ prediction.data }}
-                                </h2>
-                                <p class="prediction-title">{{ prediction.content | markdownify | strip_html | truncate:
-                                    100
-                                    }}</p>
-                                <p class="prediction-mov" id="{{prediction.title}}-mov">
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
-
-        </div>
-
-
-        <!--button-->
-        <div class="row justify-content-center">
-            <div class="col-auto">
-                <a class="button button-primary"
-                   href="https://docs.google.com/spreadsheets/d/1BM-HSoegMc6gxu56LCNnpIlm_b6jlDEtztiQ4EF5jy4/copy">
-                    Access All Variables</a>
+                <h1>OMP v1.1: Georgia Senate Runoffs</h1>
+                <p>Read our postmortem <a href="/postmortem">here</a>.</p>
+                <p><a href="model-archive">View our forecast and change the inputs.</a></p>
+                <p><a href="inhouse">View the results of our Georgia resident poll.</a></p>
             </div>
         </div>
     </div>
 </div>
 
+<div class="strip">
+    <div class="container">
+        <div class="row justify-content-start align-items-center">
+            <div class="col">
+                <hr style="border-width:6px !important;">
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="strip">
     <div class="container pt-6 pb-6 pb-md-10">
