@@ -22,6 +22,14 @@ Added preliminary postmortem
 Home page now links to that ^^^  
 Model now shows actual MOV  
 
+## [1.7.3] - 2021-1-05
+### Removed
+Removed banner & live section
+
+## [1.7.2] - 2021-1-05
+### Added
+Added banner with a link to live updates
+
 ## [1.7.1] - 2021-1-05
 ### Changed
 Decreased top padding  
