@@ -26,10 +26,10 @@ function handleChange() {
     }
 
     let last_updated = "2021-01-05 10AM ET"
-    let last_updated_actual = "2021-01-06 12:45 PM ET"
+    let last_updated_actual = "2021-01-08 1:07 PM ET"
 
-    let ossoff_margin_actual = "+0.40"
-    let warnock_margin_actual = "+1.2"
+    let ossoff_margin_actual = "+1.1"
+    let warnock_margin_actual = "+2.0"
 
     let [dsenate, ossoff, ossoff_margin, warnock, warnock_margin] = data[scenario];
 
